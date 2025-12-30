@@ -1081,6 +1081,40 @@
     return-void
 .end method
 
+.method public onPause()V
+    .locals 3
+
+    # Modified: Added onPause to explicitly commit preferences when leaving the screen
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onPause()V
+
+    const-string v0, "FeaturesFragment"
+
+    const-string v1, "onPause - committing preferences"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    # Explicitly commit all pending changes to pref_debug_features
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v0
+
+    const-string v1, "pref_debug_features"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    return-void
+.end method
+
 .method public onPreferenceStartFragment(Landroidx/preference/PreferenceFragmentCompat;Landroidx/preference/Preference;)Z
     .locals 3
 
