@@ -571,8 +571,8 @@
     <color name="sesl_popup_menu_blur_background_dark">#1affffff</color>
     <color name="sesl_popup_menu_divider_color_dark">@color/sesl_gray_D9</color>
     <color name="sesl_popup_menu_divider_color_light">@color/sesl_gray_L9</color>
-    <color name="sesl_popup_menu_item_text_color_checked_dark">?colorPrimaryDark</color>
-    <color name="sesl_popup_menu_item_text_color_checked_light">?colorPrimaryDark</color>
+    <color name="sesl_popup_menu_item_text_color_checked_dark">@color/sesl_primary_dark_color_dark</color>
+    <color name="sesl_popup_menu_item_text_color_checked_light">@color/sesl_primary_dark_color_light</color>
     <color name="sesl_popup_menu_item_text_color_normal">@color/sesl_text1_light</color>
     <color name="sesl_popup_menu_item_text_color_normal_dark">@color/sesl_text1_dark</color>
     <color name="sesl_preference_dot_badge_background_color">#e65b17</color>
