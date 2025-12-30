@@ -42,9 +42,6 @@
     <PreferenceCategory android:title="" android:key="@string/dep_features">
         <com.sec.android.app.camera.setting.SettingPreference android:title="@string/Title_features" android:key="@string/key_features" android:dependency="@string/dep_features" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="" android:key="@string/dep_camera_settings_mods">
-        <com.sec.android.app.camera.setting.SettingPreference android:title="@string/Title_camera_settings_mods" android:key="@string/key_camera_settings_mods" android:dependency="@string/dep_camera_settings_mods" />
-    </PreferenceCategory>
     <PreferenceCategory android:title="@string/Title_privacy" android:key="@string/dep_privacy">
         <com.sec.android.app.camera.setting.SettingPreference android:title="@string/Title_Permissions" android:key="@string/key_permissions" android:dependency="@string/dep_privacy" />
         <com.sec.android.app.camera.setting.CustomizationServicePreference android:persistent="false" android:title="@string/Title_Customization_Service" android:key="@string/key_customization_service" android:summary="@string/customization_service_summary" android:dependency="@string/dep_privacy" />

@@ -317,9 +317,6 @@
     <string name="Title_document_scan">Scan documents</string>
     <string name="Title_document_scan_and_text">Scan documents and text</string>
     <string name="Title_features">Features</string>
-    <string name="Title_camera_settings_mods">Camera Settings Mods</string>
-    <string name="key_camera_settings_mods">key_camera_settings_mods</string>
-    <string name="dep_camera_settings_mods">dep_camera_settings_mods</string>
     <string name="Title_grid_lines_and_level">Grid lines and level</string>
     <string name="Title_grid_lines_only">Grid lines only</string>
     <string name="Title_guide_lines">Composition guide</string>
