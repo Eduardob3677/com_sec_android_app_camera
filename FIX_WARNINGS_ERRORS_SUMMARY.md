@@ -115,7 +115,8 @@ W SeslBaseReflector: Reflector did not find method = hidden_notifyViewAccessibil
 ## Testing Recommendations
 
 To verify the fix:
-1. Rebuild the APK using apktool: `apktool b com_sec_android_app_camera -o camera_fixed.apk`
+1. Rebuild the APK using apktool: `apktool b <decompiled_folder> -o camera_fixed.apk`
+   (Replace `<decompiled_folder>` with your actual decompiled APK directory path)
 2. Sign the APK with your keystore
 3. Install and run the app
 4. Navigate to Settings → Features menu
@@ -125,10 +126,26 @@ To verify the fix:
 ## Technical Details
 
 ### Why Theme Attributes Don't Work in Color Resources
-- Theme attributes (e.g., `?colorPrimaryDark`) are context-dependent and resolved at runtime based on the current theme
-- Color resources need to be concrete values that can be resolved at compile time
-- Using a theme attribute in a color resource creates a "complex type" that requires runtime theme resolution
-- This causes ResourcesCompat to fail when trying to inflate the ColorStateList
+
+Theme attributes and color resources have different resolution mechanisms:
+
+**Theme Attributes (`?attr/name`):**
+- Resolved at **runtime** when a theme context is available
+- Context-dependent - value changes based on the active theme
+- Require access to the current theme's attribute map
+- Work in layouts and styles where theme context exists
+
+**Color Resources (`@color/name`):**
+- Resolved at **compile time** during resource processing
+- Context-independent - always resolve to the same value
+- Can be statically linked without runtime theme context
+- Work everywhere colors are needed
+
+**The Problem:**
+- When `?colorPrimaryDark` is used in a color resource, Android tries to resolve it at compile time
+- But theme attributes need runtime theme context, creating a "complex type" that can't be compiled
+- ResourcesCompat fails to inflate the ColorStateList because it can't resolve the theme attribute without a theme context
+- This causes the "complex map type" error
 
 ### Proper Solution
 - Replace theme attribute references with concrete color resource references
