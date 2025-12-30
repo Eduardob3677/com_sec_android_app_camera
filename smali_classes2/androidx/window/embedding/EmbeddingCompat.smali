@@ -55,7 +55,7 @@
 # static fields
 .field public static final Companion:Landroidx/window/embedding/EmbeddingCompat$Companion;
 
-.field public static final DEBUG:Z = true
+.field public static final DEBUG:Z = false
 
 .field private static final TAG:Ljava/lang/String; = "EmbeddingCompat"
 
