@@ -113,9 +113,14 @@
 
     sput-object v3, Lcom/samsung/android/camera/core2/util/FileUtils;->DATA_VENDOR:Ljava/nio/file/Path;
 
+    # Modified: Wrap semGetCurrentUser() in try-catch to handle SecurityException
+    # when INTERACT_ACROSS_USERS permission is not granted
+    :try_start_0
     invoke-static {}, Lcom/samsung/android/camera/core2/util/SemWrapper;->semGetCurrentUser()I
 
     move-result v4
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/16 v5, 0x4d
 
@@ -125,6 +130,25 @@
 
     :cond_0
     sput-object v1, Lcom/samsung/android/camera/core2/util/FileUtils;->ROOT_SECURE_DIRECTORY_PATH:Ljava/nio/file/Path;
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v4
+
+    # SecurityException caught - default to DATA_SEC path (v1)
+    # Log the exception for debugging
+    const-string v5, "FileUtils"
+
+    const-string v4, "SecurityException when calling semGetCurrentUser(), defaulting to /data/sec"
+
+    invoke-static {v5, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    # Use DATA_SEC path (v1) as default
+    sput-object v1, Lcom/samsung/android/camera/core2/util/FileUtils;->ROOT_SECURE_DIRECTORY_PATH:Ljava/nio/file/Path;
+
+    :goto_0
+    nop
 
     new-instance v2, Ljava/lang/StringBuilder;
 
