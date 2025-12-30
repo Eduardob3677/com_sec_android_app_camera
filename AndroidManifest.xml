@@ -395,6 +395,9 @@
         <activity android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize" android:exported="false" android:finishOnTaskLaunch="true" android:label="" android:name="com.sec.android.app.camera.setting.FeaturesSettingActivity" android:parentActivityName="com.sec.android.app.camera.setting.CameraSettingActivity" android:screenOrientation="sensor" android:showWhenLocked="true" android:theme="@style/AppCompat.ListTheme">
             <meta-data android:name="com.samsung.keyguard.SHOW_WHEN_LOCKED_SHORTCUT" android:value="true"/>
         </activity>
+        <activity android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize" android:exported="false" android:finishOnTaskLaunch="true" android:label="@string/camera_capability_settings" android:name="com.sec.android.app.camera.setting.CameraCapabilitySettingsActivity" android:parentActivityName="com.sec.android.app.camera.setting.FeaturesSettingActivity" android:screenOrientation="sensor" android:showWhenLocked="true" android:theme="@style/AppCompat.ListTheme">
+            <meta-data android:name="com.samsung.keyguard.SHOW_WHEN_LOCKED_SHORTCUT" android:value="true"/>
+        </activity>
         <service android:exported="false" android:foregroundServiceType="camera" android:name="com.samsung.android.camera.core2.processor.PostProcessService"/>
         <service android:exported="false" android:foregroundServiceType="camera" android:name="com.sec.android.app.camera.service.NotificationService"/>
         <service android:exported="false" android:foregroundServiceType="camera" android:name="com.sec.android.app.camera.setting.launcherwidget.WidgetUpdateService"/>
