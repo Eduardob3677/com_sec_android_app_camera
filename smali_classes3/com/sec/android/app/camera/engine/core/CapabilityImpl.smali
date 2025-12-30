@@ -3014,291 +3014,81 @@
 .end method
 
 .method public isActionShotSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->d:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x44
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->d:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->d:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isAdvancedZeroShutterLagSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->j:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x5b
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->j:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->j:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isAeAfLockSupported()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFixedFocusLens:Z
-
-    if-nez v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAfSupported:Z
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAfRegionsSupported:Z
-
-    if-eqz v0, :cond_0
-
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAeRegionsSupported:Z
-
-    if-eqz p0, :cond_0
+    .locals 0
 
     const/4 p0, 0x1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
     return p0
 .end method
 
 .method public isAfSupported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAfSupported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isAnamorphicLensPreviewSupported()Z
-    .locals 4
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
+    const/4 p0, 0x1
 
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->f:Lcom/samsung/android/camera/core2/local/capability/ControlCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->d:Ljava/lang/Integer;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->a:Lcom/samsung/android/camera/core2/CamCapability$CameraCharacteristicsSupplier;
-
-    invoke-interface {v0}, Lcom/samsung/android/camera/core2/CamCapability$CameraCharacteristicsSupplier;->a()Landroid/hardware/camera2/CameraCharacteristics;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
-
-    move-result-object v0
-
-    new-instance v2, Lr1/a;
-
-    const/16 v3, 0x8
-
-    invoke-direct {v2, v3}, Lr1/a;-><init>(I)V
-
-    invoke-virtual {v0, v2}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
-
-    move-result-object v0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->d:Ljava/lang/Integer;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->d:Ljava/lang/Integer;
-
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p0
-
-    const/4 v0, 0x2
-
-    and-int/2addr p0, v0
-
-    if-ne p0, v0, :cond_1
-
-    const/4 v1, 0x1
-
-    :cond_1
-    return v1
+    return p0
 .end method
 
 .method public isAutoFramingSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->i:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x3b
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->i:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->i:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isBeautyFaceSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->k:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x7
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->k:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->k:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isBeautyInHalFaceDetectionSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsBeautyInHalFaceDetectionFullModeSupported:Z
-
-    if-nez v0, :cond_1
-
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsBeautyInHalFaceDetectionTrackingModeSupported:Z
-
-    if-nez v0, :cond_1
-
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsBeautyInHalFaceDetectionSimpleModeSupported:Z
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
 .method public isBeautyInHalFaceDetectionTrackingSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsBeautyInHalFaceDetectionFullModeSupported:Z
-
-    if-nez v0, :cond_1
-
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsBeautyInHalFaceDetectionTrackingModeSupported:Z
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
 .method public isBeautyInHalSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->r()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3306,15 +3096,7 @@
 .method public isBokehLightingSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->u()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3322,15 +3104,7 @@
 .method public isBokehNightSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->t()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3338,44 +3112,15 @@
 .method public isBokehSpecialEffectSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->v()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isBokehSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->m:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x4
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->m:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->m:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3383,7 +3128,7 @@
 .method public isCafSupported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsCafSupported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3391,93 +3136,31 @@
 .method public isColorSpaceModeDisplayP3Supported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsColorSpaceModeDisplayP3Supported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isCompositionGuideSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->s:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x3d
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->s:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->s:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isDepthSupported()Z
-    .locals 1
-
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    const/16 v0, 0x20
-
-    invoke-virtual {p0, v0}, Lcom/samsung/android/camera/core2/CamCapability;->o(I)Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    if-eqz p0, :cond_0
+    .locals 0
 
     const/4 p0, 0x1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
     return p0
 .end method
 
 .method public isDocumentDetectionInHalSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->t:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x4d
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->t:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->t:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3485,15 +3168,7 @@
 .method public isDynamicFovSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->w()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3501,73 +3176,23 @@
 .method public isDynamicShotInfoSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->y()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isEditablePortraitVideoSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->y:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x55
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->y:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->y:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isEventFinderSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->z:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x2f
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->z:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->z:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3575,62 +3200,23 @@
 .method public isFaceDetectionFullModeSupported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFaceDetectionFullModeSupported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isFaceDetectionSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFaceDetectionFullModeSupported:Z
-
-    if-nez v0, :cond_1
-
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFaceDetectionSimpleModeSupported:Z
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
 .method public isFocusEnhancerSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->B:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x45
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->B:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->B:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3638,180 +3224,47 @@
 .method public isFrontPhotoNightModeSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->M()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isFusionHighResolutionSupported(Landroid/util/Size;)Z
-    .locals 1
-
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->V()Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/samsung/android/camera/core2/container/SecStreamConfig;
-
-    iget-object v0, v0, Lcom/samsung/android/camera/core2/container/SecStreamConfig;->b:Landroid/util/Size;
-
-    invoke-virtual {v0, p1}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    .locals 0
 
     const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public isHdr10RecordingAvailable()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->F:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x9
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->F:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->F:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isHyperlapseAstrographySupported()Z
-    .locals 5
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
+    const/4 p0, 0x1
 
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->n()[I
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    array-length v2, p0
-
-    const/4 v3, 0x1
-
-    sub-int/2addr v2, v3
-
-    if-ge v1, v2, :cond_1
-
-    aget v2, p0, v1
-
-    const/16 v4, 0x65
-
-    if-ne v2, v4, :cond_0
-
-    return v3
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x2
-
-    goto :goto_0
-
-    :cond_1
-    return v0
+    return p0
 .end method
 
 .method public isHyperlapseTrailModeSupported(I)Z
-    .locals 5
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
+    const/4 p0, 0x1
 
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->n()[I
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    array-length v2, p0
-
-    const/4 v3, 0x1
-
-    sub-int/2addr v2, v3
-
-    if-ge v1, v2, :cond_1
-
-    aget v2, p0, v1
-
-    add-int/lit8 v4, v1, 0x1
-
-    aget v4, p0, v4
-
-    if-ne v2, p1, :cond_0
-
-    and-int/lit8 v2, v4, 0x1
-
-    if-eqz v2, :cond_0
-
-    return v3
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x2
-
-    goto :goto_0
-
-    :cond_1
-    return v0
+    return p0
 .end method
 
 .method public isLensDistortionCorrectionSupported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsLensDistortionCorrectionSupported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3819,159 +3272,31 @@
 .method public isLiveHdrSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->k()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isLogVideoSupported()Z
-    .locals 6
-
-    iget-object v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object v0, v0, Lcom/samsung/android/camera/core2/CamCapability;->f:Lcom/samsung/android/camera/core2/local/capability/ControlCapability;
-
-    iget-object v1, v0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->q:[I
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_0
-
-    iget-object v1, v0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->a:Lcom/samsung/android/camera/core2/CamCapability$CameraCharacteristicsSupplier;
-
-    invoke-interface {v1}, Lcom/samsung/android/camera/core2/CamCapability$CameraCharacteristicsSupplier;->a()Landroid/hardware/camera2/CameraCharacteristics;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
-
-    move-result-object v1
-
-    new-instance v3, Lr1/a;
-
-    const/4 v4, 0x2
-
-    invoke-direct {v3, v4}, Lr1/a;-><init>(I)V
-
-    invoke-virtual {v1, v3}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
-
-    move-result-object v1
-
-    new-array v3, v2, [I
-
-    invoke-virtual {v1, v3}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, [I
-
-    iput-object v1, v0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->q:[I
-
-    :cond_0
-    iget-object v0, v0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->q:[I
-
-    array-length v1, v0
-
-    move v3, v2
-
-    :goto_0
-    if-ge v3, v1, :cond_2
-
-    aget v4, v0, v3
-
-    iget-object v5, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {v5}, Lcom/samsung/android/camera/core2/CamCapability;->a()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v5
-
-    if-ne v5, v4, :cond_1
+    .locals 0
 
     const/4 p0, 0x1
 
     return p0
-
-    :cond_1
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    return v2
 .end method
 
 .method public isMultiAfSupported()Z
-    .locals 4
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
+    const/4 p0, 0x1
 
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->f:Lcom/samsung/android/camera/core2/local/capability/ControlCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->t:[I
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->a:Lcom/samsung/android/camera/core2/CamCapability$CameraCharacteristicsSupplier;
-
-    invoke-interface {v0}, Lcom/samsung/android/camera/core2/CamCapability$CameraCharacteristicsSupplier;->a()Landroid/hardware/camera2/CameraCharacteristics;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
-
-    move-result-object v0
-
-    new-instance v2, Lcom/sec/android/app/camera/layer/menu/effects/filter/a;
-
-    const/16 v3, 0x16
-
-    invoke-direct {v2, v3}, Lcom/sec/android/app/camera/layer/menu/effects/filter/a;-><init>(I)V
-
-    invoke-virtual {v0, v2}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
-
-    move-result-object v0
-
-    new-array v2, v1, [I
-
-    invoke-virtual {v0, v2}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [I
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->t:[I
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/ControlCapability;->t:[I
-
-    array-length p0, p0
-
-    if-eqz p0, :cond_1
-
-    const/4 v1, 0x1
-
-    :cond_1
-    return v1
+    return p0
 .end method
 
 .method public isNightScreenFlashSupported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsNightScreenFlashSupported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3979,15 +3304,7 @@
 .method public isObjectDetectorSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->B()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -3995,15 +3312,7 @@
 .method public isPetDetectionSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->D()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4011,15 +3320,7 @@
 .method public isPhaseAfSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->m()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4027,7 +3328,7 @@
 .method public isPhotoPalmGestureDetectionSupported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsPhotoPalmGestureDetectionSupported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4035,131 +3336,39 @@
 .method public isQrCodeDetectionInHalSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->E()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isQuickTakeRecordingAnimationCallbackSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->r0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x5a
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->r0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->r0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isRecordingStopTriggerRequired()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->J:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x3e
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->J:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->J:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isRemovingRecordSurfaceWhileSsmFrcSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->T:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x40
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->T:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->T:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isSceneOptimizerSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->V:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x18
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->V:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->V:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4167,15 +3376,7 @@
 .method public isSelfieToneModeSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->C()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4183,15 +3384,7 @@
 .method public isSensorCropSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->G()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4199,168 +3392,39 @@
 .method public isSingleBokehInHalSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->I()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isSlowMotionResolutionSupported(Lcom/sec/android/app/camera/interfaces/Resolution;)Z
-    .locals 3
-
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->W()Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/samsung/android/camera/core2/container/HighSpeedVideoStreamConfig;
-
-    iget-object v1, v0, Lcom/samsung/android/camera/core2/container/HighSpeedVideoStreamConfig;->a:Landroid/util/Size;
-
-    invoke-virtual {p1}, Lcom/sec/android/app/camera/interfaces/Resolution;->getSize()Landroid/util/Size;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lcom/samsung/android/camera/core2/container/HighSpeedVideoStreamConfig;->b:Landroid/util/Range;
-
-    invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Lcom/sec/android/app/camera/interfaces/Resolution;->getMaxFps()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_0
+    .locals 0
 
     const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public isSmoothZoomSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->c0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x21
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->c0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->c0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isSubPreviewCallbackSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->f0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x19
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->f0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->f0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isSuperSlowMotionGmcSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->l0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0xd
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->l0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->l0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4368,64 +3432,23 @@
 .method public isSuperSlowMotionQFrcSupported()Z
     .locals 0
 
-    invoke-virtual {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->getSuperSlowMotionQFrcFps()I
-
-    move-result p0
-
-    if-lez p0, :cond_0
-
     const/4 p0, 0x1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
     return p0
 .end method
 
 .method public isSuperSlowMotionSupported()Z
     .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->L()Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isSyncCancelSuperSlowMotionAutoDetectSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->m0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x25
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->m0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->m0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4433,260 +3456,47 @@
 .method public isTouchAeSupported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAeRegionsSupported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isTouchAfSupported()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFixedFocusLens:Z
-
-    if-nez v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAfSupported:Z
-
-    if-eqz v0, :cond_0
-
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAfRegionsSupported:Z
-
-    if-eqz p0, :cond_0
+    .locals 0
 
     const/4 p0, 0x1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
     return p0
 .end method
 
 .method public isVideoBeautyFaceSupported(Landroid/util/Size;I)Z
-    .locals 4
+    .locals 0
 
-    iget-object v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
+    const/4 p0, 0x1
 
-    iget-object v0, v0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v1, v0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->s0:Ljava/lang/Boolean;
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x6
-
-    invoke-static {v0, v1}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->s0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object v0, v0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->s0:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_1
-
-    return v1
-
-    :cond_1
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->g:Lcom/samsung/android/camera/core2/local/capability/ScalerCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ScalerCapability;->E:Ljava/util/List;
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ScalerCapability;->a:Lcom/samsung/android/camera/core2/CamCapability$CameraCharacteristicsSupplier;
-
-    invoke-interface {v0}, Lcom/samsung/android/camera/core2/CamCapability$CameraCharacteristicsSupplier;->a()Landroid/hardware/camera2/CameraCharacteristics;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/samsung/android/camera/core2/local/vendorkey/SemCameraCharacteristics;->r0:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-static {v0, v2}, Lcom/samsung/android/camera/core2/local/vendorkey/SemCameraCharacteristics;->a(Landroid/hardware/camera2/CameraCharacteristics;Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [I
-
-    if-eqz v0, :cond_2
-
-    invoke-static {v0}, Lcom/samsung/android/camera/core2/container/VideoStreamConfig;->b([I)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ScalerCapability;->E:Ljava/util/List;
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/ScalerCapability;->E:Ljava/util/List;
-
-    :cond_3
-    :goto_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/ScalerCapability;->E:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_4
-
-    return v2
-
-    :cond_4
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_5
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/samsung/android/camera/core2/container/VideoStreamConfig;
-
-    iget-object v3, v0, Lcom/samsung/android/camera/core2/container/VideoStreamConfig;->a:Landroid/util/Size;
-
-    invoke-virtual {v3, p1}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    iget-object v0, v0, Lcom/samsung/android/camera/core2/container/VideoStreamConfig;->b:Landroid/util/Range;
-
-    invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-ne v0, p2, :cond_5
-
-    return v2
-
-    :cond_6
-    return v1
+    return p0
 .end method
 
 .method public isVideoBeautyReconnectMakerRequired()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->t0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x4b
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->t0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->t0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isVideoBeautySnapshotSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->v0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x12
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->v0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->v0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    xor-int/lit8 p0, p0, 0x1
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isVideoBokehEffectSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->u0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x11
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->u0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->u0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4694,7 +3504,7 @@
 .method public isVideoColorSpaceModeDisplayP3Supported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsVideoColorSpaceModeDisplayP3Supported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -4702,147 +3512,31 @@
 .method public isVideoPalmGestureDetectionSupported()Z
     .locals 0
 
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsVideoPalmGestureDetectionSupported:Z
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isVideoResolutionSupported(Lcom/sec/android/app/camera/interfaces/Resolution;)Z
-    .locals 3
-
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->i0()Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/samsung/android/camera/core2/container/VideoStreamConfig;
-
-    iget-object v1, v0, Lcom/samsung/android/camera/core2/container/VideoStreamConfig;->a:Landroid/util/Size;
-
-    invoke-virtual {p1}, Lcom/sec/android/app/camera/interfaces/Resolution;->getSize()Landroid/util/Size;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lcom/samsung/android/camera/core2/container/VideoStreamConfig;->b:Landroid/util/Range;
-
-    invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Lcom/sec/android/app/camera/interfaces/Resolution;->getMaxFps()I
-
-    move-result v2
-
-    if-ne v1, v2, :cond_0
-
-    invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Lcom/sec/android/app/camera/interfaces/Resolution;->getMinFps()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_0
+    .locals 0
 
     const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public isZoomLockSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->x0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x2b
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->x0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->x0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public isZslCaptureSupported()Z
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
-
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/CamCapability;->e:Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;
-
-    iget-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->y0:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x46
-
-    invoke-static {p0, v0}, Lb/a;->d(Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;I)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->y0:Ljava/lang/Boolean;
-
-    :cond_0
-    iget-object p0, p0, Lcom/samsung/android/camera/core2/local/capability/FeatureCapability;->y0:Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method
