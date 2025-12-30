@@ -1,0 +1,19 @@
+# Build directories
+build/
+dist/
+
+# Temporary files
+*.tmp
+/tmp/
+
+# APK files (built artifacts)
+*.apk
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
