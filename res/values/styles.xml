@@ -2544,6 +2544,7 @@
         <item name="seekBarPreferenceStyle">@style/Preference.SeekBarPreference</item>
         <item name="switchPreferenceCompatStyle">@style/Preference.SwitchPreferenceCompat</item>
         <item name="switchPreferenceStyle">@style/Preference.SwitchPreference</item>
+        <item name="colorPrimaryDark">@color/sesl_primary_dark_color_light</item>
     </style>
     <style name="BeautyTypeButtonText" parent="@style/SecSemiBold">
         <item name="android:textColor">@color/beauty_type_button_text_color</item>
