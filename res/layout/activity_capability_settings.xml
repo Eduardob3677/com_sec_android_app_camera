@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    
+    <TextView
+        android:id="@+id/capability_settings_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/capability_settings_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+    
+    <TextView
+        android:id="@+id/capability_settings_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/capability_settings_description"
+        android:textSize="14sp"
+        android:paddingBottom="16dp" />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+        <LinearLayout
+            android:id="@+id/capability_switches_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+    
+    <Button
+        android:id="@+id/capability_reset_all_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset All to Device Defaults"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

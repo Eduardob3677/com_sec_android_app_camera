@@ -3014,6 +3014,54 @@
 .end method
 
 .method public isActionShotSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isActionShotSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isActionShotSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isActionShotSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isActionShotSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3043,6 +3091,54 @@
 .end method
 
 .method public isAdvancedZeroShutterLagSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isAdvancedZeroShutterLagSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAdvancedZeroShutterLagSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAdvancedZeroShutterLagSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isAdvancedZeroShutterLagSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3072,6 +3168,54 @@
 .end method
 
 .method public isAeAfLockSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isAeAfLockSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAeAfLockSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAeAfLockSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isAeAfLockSupported_original()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFixedFocusLens:Z
@@ -3102,6 +3246,54 @@
 .end method
 
 .method public isAfSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isAfSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAfSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAfSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isAfSupported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAfSupported:Z
@@ -3110,6 +3302,54 @@
 .end method
 
 .method public isAnamorphicLensPreviewSupported()Z
+    .locals 7
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isAnamorphicLensPreviewSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAnamorphicLensPreviewSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAnamorphicLensPreviewSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isAnamorphicLensPreviewSupported_original()Z
     .locals 4
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3174,6 +3414,54 @@
 .end method
 
 .method public isAutoFramingSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isAutoFramingSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAutoFramingSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isAutoFramingSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isAutoFramingSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3203,6 +3491,54 @@
 .end method
 
 .method public isBeautyFaceSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isBeautyFaceSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBeautyFaceSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBeautyFaceSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isBeautyFaceSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3232,6 +3568,54 @@
 .end method
 
 .method public isBeautyInHalFaceDetectionSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isBeautyInHalFaceDetectionSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBeautyInHalFaceDetectionSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBeautyInHalFaceDetectionSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isBeautyInHalFaceDetectionSupported_original()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsBeautyInHalFaceDetectionFullModeSupported:Z
@@ -3262,6 +3646,54 @@
 .end method
 
 .method public isBeautyInHalFaceDetectionTrackingSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isBeautyInHalFaceDetectionTrackingSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBeautyInHalFaceDetectionTrackingSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBeautyInHalFaceDetectionTrackingSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isBeautyInHalFaceDetectionTrackingSupported_original()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsBeautyInHalFaceDetectionFullModeSupported:Z
@@ -3288,6 +3720,54 @@
 .end method
 
 .method public isBeautyInHalSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isBeautyInHalSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBeautyInHalSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBeautyInHalSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isBeautyInHalSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3304,6 +3784,54 @@
 .end method
 
 .method public isBokehLightingSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isBokehLightingSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBokehLightingSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBokehLightingSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isBokehLightingSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3320,6 +3848,54 @@
 .end method
 
 .method public isBokehNightSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isBokehNightSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBokehNightSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBokehNightSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isBokehNightSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3336,6 +3912,54 @@
 .end method
 
 .method public isBokehSpecialEffectSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isBokehSpecialEffectSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBokehSpecialEffectSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBokehSpecialEffectSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isBokehSpecialEffectSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3352,6 +3976,54 @@
 .end method
 
 .method public isBokehSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isBokehSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBokehSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isBokehSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isBokehSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3381,6 +4053,54 @@
 .end method
 
 .method public isCafSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isCafSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isCafSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isCafSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isCafSupported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsCafSupported:Z
@@ -3389,6 +4109,54 @@
 .end method
 
 .method public isColorSpaceModeDisplayP3Supported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isColorSpaceModeDisplayP3Supported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isColorSpaceModeDisplayP3Supported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isColorSpaceModeDisplayP3Supported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isColorSpaceModeDisplayP3Supported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsColorSpaceModeDisplayP3Supported:Z
@@ -3397,6 +4165,54 @@
 .end method
 
 .method public isCompositionGuideSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isCompositionGuideSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isCompositionGuideSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isCompositionGuideSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isCompositionGuideSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3426,6 +4242,54 @@
 .end method
 
 .method public isDepthSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isDepthSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isDepthSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isDepthSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isDepthSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3454,6 +4318,54 @@
 .end method
 
 .method public isDocumentDetectionInHalSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isDocumentDetectionInHalSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isDocumentDetectionInHalSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isDocumentDetectionInHalSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isDocumentDetectionInHalSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3483,6 +4395,54 @@
 .end method
 
 .method public isDynamicFovSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isDynamicFovSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isDynamicFovSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isDynamicFovSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isDynamicFovSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3499,6 +4459,54 @@
 .end method
 
 .method public isDynamicShotInfoSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isDynamicShotInfoSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isDynamicShotInfoSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isDynamicShotInfoSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isDynamicShotInfoSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3515,6 +4523,54 @@
 .end method
 
 .method public isEditablePortraitVideoSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isEditablePortraitVideoSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isEditablePortraitVideoSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isEditablePortraitVideoSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isEditablePortraitVideoSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3544,6 +4600,54 @@
 .end method
 
 .method public isEventFinderSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isEventFinderSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isEventFinderSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isEventFinderSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isEventFinderSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3573,6 +4677,54 @@
 .end method
 
 .method public isFaceDetectionFullModeSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isFaceDetectionFullModeSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isFaceDetectionFullModeSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isFaceDetectionFullModeSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isFaceDetectionFullModeSupported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFaceDetectionFullModeSupported:Z
@@ -3581,6 +4733,54 @@
 .end method
 
 .method public isFaceDetectionSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isFaceDetectionSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isFaceDetectionSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isFaceDetectionSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isFaceDetectionSupported_original()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFaceDetectionFullModeSupported:Z
@@ -3607,6 +4807,54 @@
 .end method
 
 .method public isFocusEnhancerSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isFocusEnhancerSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isFocusEnhancerSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isFocusEnhancerSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isFocusEnhancerSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3636,6 +4884,54 @@
 .end method
 
 .method public isFrontPhotoNightModeSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isFrontPhotoNightModeSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isFrontPhotoNightModeSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isFrontPhotoNightModeSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isFrontPhotoNightModeSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3725,6 +5021,54 @@
 .end method
 
 .method public isHyperlapseAstrographySupported()Z
+    .locals 8
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isHyperlapseAstrographySupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isHyperlapseAstrographySupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isHyperlapseAstrographySupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isHyperlapseAstrographySupported_original()Z
     .locals 5
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3809,6 +5153,54 @@
 .end method
 
 .method public isLensDistortionCorrectionSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isLensDistortionCorrectionSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isLensDistortionCorrectionSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isLensDistortionCorrectionSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isLensDistortionCorrectionSupported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsLensDistortionCorrectionSupported:Z
@@ -3817,6 +5209,54 @@
 .end method
 
 .method public isLiveHdrSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isLiveHdrSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isLiveHdrSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isLiveHdrSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isLiveHdrSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3833,6 +5273,54 @@
 .end method
 
 .method public isLogVideoSupported()Z
+    .locals 9
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isLogVideoSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isLogVideoSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isLogVideoSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isLogVideoSupported_original()Z
     .locals 6
 
     iget-object v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3913,6 +5401,54 @@
 .end method
 
 .method public isMultiAfSupported()Z
+    .locals 7
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isMultiAfSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isMultiAfSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isMultiAfSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isMultiAfSupported_original()Z
     .locals 4
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3969,6 +5505,54 @@
 .end method
 
 .method public isNightScreenFlashSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isNightScreenFlashSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isNightScreenFlashSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isNightScreenFlashSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isNightScreenFlashSupported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsNightScreenFlashSupported:Z
@@ -3977,6 +5561,54 @@
 .end method
 
 .method public isObjectDetectorSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isObjectDetectorSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isObjectDetectorSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isObjectDetectorSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isObjectDetectorSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -3993,6 +5625,54 @@
 .end method
 
 .method public isPetDetectionSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isPetDetectionSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isPetDetectionSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isPetDetectionSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isPetDetectionSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4009,6 +5689,54 @@
 .end method
 
 .method public isPhaseAfSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isPhaseAfSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isPhaseAfSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isPhaseAfSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isPhaseAfSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4025,6 +5753,54 @@
 .end method
 
 .method public isPhotoPalmGestureDetectionSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isPhotoPalmGestureDetectionSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isPhotoPalmGestureDetectionSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isPhotoPalmGestureDetectionSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isPhotoPalmGestureDetectionSupported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsPhotoPalmGestureDetectionSupported:Z
@@ -4033,6 +5809,54 @@
 .end method
 
 .method public isQrCodeDetectionInHalSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isQrCodeDetectionInHalSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isQrCodeDetectionInHalSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isQrCodeDetectionInHalSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isQrCodeDetectionInHalSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4049,6 +5873,54 @@
 .end method
 
 .method public isQuickTakeRecordingAnimationCallbackSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isQuickTakeRecordingAnimationCallbackSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isQuickTakeRecordingAnimationCallbackSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isQuickTakeRecordingAnimationCallbackSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isQuickTakeRecordingAnimationCallbackSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4107,6 +5979,54 @@
 .end method
 
 .method public isRemovingRecordSurfaceWhileSsmFrcSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isRemovingRecordSurfaceWhileSsmFrcSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isRemovingRecordSurfaceWhileSsmFrcSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isRemovingRecordSurfaceWhileSsmFrcSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isRemovingRecordSurfaceWhileSsmFrcSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4136,6 +6056,54 @@
 .end method
 
 .method public isSceneOptimizerSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSceneOptimizerSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSceneOptimizerSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSceneOptimizerSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSceneOptimizerSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4165,6 +6133,54 @@
 .end method
 
 .method public isSelfieToneModeSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSelfieToneModeSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSelfieToneModeSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSelfieToneModeSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSelfieToneModeSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4181,6 +6197,54 @@
 .end method
 
 .method public isSensorCropSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSensorCropSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSensorCropSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSensorCropSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSensorCropSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4197,6 +6261,54 @@
 .end method
 
 .method public isSingleBokehInHalSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSingleBokehInHalSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSingleBokehInHalSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSingleBokehInHalSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSingleBokehInHalSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4279,6 +6391,54 @@
 .end method
 
 .method public isSmoothZoomSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSmoothZoomSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSmoothZoomSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSmoothZoomSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSmoothZoomSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4308,6 +6468,54 @@
 .end method
 
 .method public isSubPreviewCallbackSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSubPreviewCallbackSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSubPreviewCallbackSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSubPreviewCallbackSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSubPreviewCallbackSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4337,6 +6545,54 @@
 .end method
 
 .method public isSuperSlowMotionGmcSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSuperSlowMotionGmcSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSuperSlowMotionGmcSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSuperSlowMotionGmcSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSuperSlowMotionGmcSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4366,6 +6622,54 @@
 .end method
 
 .method public isSuperSlowMotionQFrcSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSuperSlowMotionQFrcSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSuperSlowMotionQFrcSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSuperSlowMotionQFrcSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSuperSlowMotionQFrcSupported_original()Z
     .locals 0
 
     invoke-virtual {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->getSuperSlowMotionQFrcFps()I
@@ -4386,6 +6690,54 @@
 .end method
 
 .method public isSuperSlowMotionSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSuperSlowMotionSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSuperSlowMotionSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSuperSlowMotionSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSuperSlowMotionSupported_original()Z
     .locals 0
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4402,6 +6754,54 @@
 .end method
 
 .method public isSyncCancelSuperSlowMotionAutoDetectSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isSyncCancelSuperSlowMotionAutoDetectSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSyncCancelSuperSlowMotionAutoDetectSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isSyncCancelSuperSlowMotionAutoDetectSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isSyncCancelSuperSlowMotionAutoDetectSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4431,6 +6831,54 @@
 .end method
 
 .method public isTouchAeSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isTouchAeSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isTouchAeSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isTouchAeSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isTouchAeSupported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAeRegionsSupported:Z
@@ -4439,6 +6887,54 @@
 .end method
 
 .method public isTouchAfSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isTouchAfSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isTouchAfSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isTouchAfSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isTouchAfSupported_original()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsFixedFocusLens:Z
@@ -4632,6 +7128,54 @@
 .end method
 
 .method public isVideoBeautySnapshotSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isVideoBeautySnapshotSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isVideoBeautySnapshotSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isVideoBeautySnapshotSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isVideoBeautySnapshotSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4663,6 +7207,54 @@
 .end method
 
 .method public isVideoBokehEffectSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isVideoBokehEffectSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isVideoBokehEffectSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isVideoBokehEffectSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isVideoBokehEffectSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4692,6 +7284,54 @@
 .end method
 
 .method public isVideoColorSpaceModeDisplayP3Supported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isVideoColorSpaceModeDisplayP3Supported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isVideoColorSpaceModeDisplayP3Supported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isVideoColorSpaceModeDisplayP3Supported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isVideoColorSpaceModeDisplayP3Supported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsVideoColorSpaceModeDisplayP3Supported:Z
@@ -4700,6 +7340,54 @@
 .end method
 
 .method public isVideoPalmGestureDetectionSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isVideoPalmGestureDetectionSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isVideoPalmGestureDetectionSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isVideoPalmGestureDetectionSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isVideoPalmGestureDetectionSupported_original()Z
     .locals 0
 
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsVideoPalmGestureDetectionSupported:Z
@@ -4790,6 +7478,54 @@
 .end method
 
 .method public isZoomLockSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isZoomLockSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isZoomLockSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isZoomLockSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isZoomLockSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
@@ -4819,6 +7555,54 @@
 .end method
 
 .method public isZslCaptureSupported()Z
+    .locals 4
+
+    # Check for capability override in SharedPreferences
+    # Get application context from static field
+    sget-object v0, Lx1/f;->d:Landroid/content/Context;
+    
+    if-eqz v0, :call_original
+    
+    # Context exists, check SharedPreferences
+    const-string v1, "pref_capability_overrides"
+    
+    const/4 v2, 0x0
+    
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v0
+    
+    # Check if preference key exists
+    const-string v1, "capability_isZslCaptureSupported"
+    
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    
+    move-result v3
+    
+    if-eqz v3, :call_original
+    
+    # Get device default first to use as default value for preference
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isZslCaptureSupported_original()Z
+    
+    move-result v2
+    
+    # Get preference override value
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    
+    move-result v0
+    
+    return v0
+    
+    :call_original
+    # No override or no context, call original method
+    invoke-direct {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->isZslCaptureSupported_original()Z
+    
+    move-result v0
+    
+    return v0
+.end method
+
+.method private isZslCaptureSupported_original()Z
     .locals 1
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
