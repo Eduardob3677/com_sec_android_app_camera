@@ -10,23 +10,11 @@
 
 
 # instance fields
+.field private mCapabilitiesContainer:Landroid/widget/LinearLayout;
+
 .field private mContext:Landroid/content/Context;
 
 .field private mSharedPreferences:Landroid/content/SharedPreferences;
-
-.field private switchAfSupported:Landroidx/appcompat/widget/SwitchCompat;
-
-.field private switchCafSupported:Landroidx/appcompat/widget/SwitchCompat;
-
-.field private switchAfRegionsSupported:Landroidx/appcompat/widget/SwitchCompat;
-
-.field private switchAeRegionsSupported:Landroidx/appcompat/widget/SwitchCompat;
-
-.field private switchFaceDetectionFull:Landroidx/appcompat/widget/SwitchCompat;
-
-.field private switchFaceDetectionSimple:Landroidx/appcompat/widget/SwitchCompat;
-
-.field private switchLensDistortionCorrection:Landroidx/appcompat/widget/SwitchCompat;
 
 
 # direct methods
@@ -38,211 +26,468 @@
     return-void
 .end method
 
-.method private getDeviceDefaultValue(Ljava/lang/String;)Z
-    .locals 0
+.method private addCapabilitySwitch(Ljava/lang/String;I)V
+    .locals 8
 
-    # For now, return true for all capabilities as device default
-    const/4 p0, 0x1
+    # Create horizontal LinearLayout
+    new-instance v0, Landroid/widget/LinearLayout;
 
-    return p0
-.end method
+    invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-.method private initializeSwitches()V
-    .locals 3
+    const/4 v1, 0x0
 
-    const v0, 0x7f0a05e1    # R.id.switch_af_supported
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    invoke-virtual {p0, v0}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+    new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v0
+    const/4 v3, -0x1
 
-    check-cast v0, Landroidx/appcompat/widget/SwitchCompat;
+    const/4 v4, -0x2
 
-    iput-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAfSupported:Landroidx/appcompat/widget/SwitchCompat;
+    invoke-direct {v2, v3, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    const v0, 0x7f0a05e2    # R.id.switch_caf_supported
+    const/16 v5, 0x8
 
-    invoke-virtual {p0, v0}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v1, v5, v1, v5}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
 
-    move-result-object v0
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    check-cast v0, Landroidx/appcompat/widget/SwitchCompat;
+    # Create TextView for label
+    new-instance v2, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchCafSupported:Landroidx/appcompat/widget/SwitchCompat;
+    invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const v0, 0x7f0a05e3    # R.id.switch_af_regions_supported
+    invoke-virtual {p0, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+    move-result-object v5
 
-    move-result-object v0
+    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    check-cast v0, Landroidx/appcompat/widget/SwitchCompat;
+    const/high16 v5, 0x41800000    # 16.0f
 
-    iput-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAfRegionsSupported:Landroidx/appcompat/widget/SwitchCompat;
+    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextSize(F)V
 
-    const v0, 0x7f0a05e4    # R.id.switch_ae_regions_supported
+    const/high16 v5, -0x1000000
 
-    invoke-virtual {p0, v0}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    move-result-object v0
+    new-instance v5, Landroid/widget/LinearLayout$LayoutParams;
 
-    check-cast v0, Landroidx/appcompat/widget/SwitchCompat;
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    iput-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAeRegionsSupported:Landroidx/appcompat/widget/SwitchCompat;
+    invoke-direct {v5, v1, v4, v6}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    const v0, 0x7f0a05e5    # R.id.switch_face_detection_full
+    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {p0, v0}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+    # Create Switch
+    new-instance v5, Landroidx/appcompat/widget/SwitchCompat;
 
-    move-result-object v0
+    invoke-direct {v5, p0}, Landroidx/appcompat/widget/SwitchCompat;-><init>(Landroid/content/Context;)V
 
-    check-cast v0, Landroidx/appcompat/widget/SwitchCompat;
+    new-instance v6, Landroid/widget/LinearLayout$LayoutParams;
 
-    iput-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchFaceDetectionFull:Landroidx/appcompat/widget/SwitchCompat;
+    invoke-direct {v6, v4, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    const v0, 0x7f0a05e6    # R.id.switch_face_detection_simple
+    invoke-virtual {v5, v6}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {p0, v0}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+    # Load saved preference or device default
+    iget-object v4, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
 
-    move-result-object v0
+    const/4 v6, 0x1
 
-    check-cast v0, Landroidx/appcompat/widget/SwitchCompat;
+    invoke-interface {v4, p1, v6}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    iput-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchFaceDetectionSimple:Landroidx/appcompat/widget/SwitchCompat;
+    move-result v4
 
-    const v0, 0x7f0a05e7    # R.id.switch_lens_distortion_correction
+    invoke-virtual {v5, v4}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
 
-    invoke-virtual {p0, v0}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+    # Set listener
+    new-instance v4, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$1;
 
-    move-result-object v0
+    invoke-direct {v4, p0, p1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$1;-><init>(Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;Ljava/lang/String;)V
 
-    check-cast v0, Landroidx/appcompat/widget/SwitchCompat;
+    invoke-virtual {v5, v4}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    iput-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchLensDistortionCorrection:Landroidx/appcompat/widget/SwitchCompat;
+    # Add views to container
+    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    # Load saved preferences or device defaults
-    invoke-direct {p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->loadPreferences()V
+    invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    # Set up switch listeners
-    invoke-direct {p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->setupSwitchListeners()V
+    iget-object p1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mCapabilitiesContainer:Landroid/widget/LinearLayout;
+
+    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method private loadPreferences()V
-    .locals 3
+.method private initializeCapabilitySwitches()V
+    .locals 2
 
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
+    const-string v0, "action_shot_supported"
 
-    const-string v1, "af_supported"
+    const v1, 0x7f130047    # R.string.cap_action_shot_supported
 
-    invoke-direct {p0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->getDeviceDefaultValue(Ljava/lang/String;)Z
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    move-result v2
+    const-string v0, "advanced_zero_shutter_lag_supported"
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    const v1, 0x7f130048    # R.string.cap_advanced_zero_shutter_lag_supported
 
-    move-result v0
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    iget-object v1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAfSupported:Landroidx/appcompat/widget/SwitchCompat;
+    const-string v0, "ae_af_lock_supported"
 
-    invoke-virtual {v1, v0}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+    const v1, 0x7f130049    # R.string.cap_ae_af_lock_supported
 
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    const-string v1, "caf_supported"
+    const-string v0, "af_supported"
 
-    invoke-direct {p0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->getDeviceDefaultValue(Ljava/lang/String;)Z
+    const v1, 0x7f13004a    # R.string.cap_af_supported
 
-    move-result v2
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    const-string v0, "anamorphic_lens_preview_supported"
 
-    move-result v0
+    const v1, 0x7f13004b    # R.string.cap_anamorphic_lens_preview_supported
 
-    iget-object v1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchCafSupported:Landroidx/appcompat/widget/SwitchCompat;
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    invoke-virtual {v1, v0}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+    const-string v0, "auto_framing_supported"
 
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
+    const v1, 0x7f13004c    # R.string.cap_auto_framing_supported
 
-    const-string v1, "af_regions_supported"
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    invoke-direct {p0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->getDeviceDefaultValue(Ljava/lang/String;)Z
+    const-string v0, "beauty_face_supported"
 
-    move-result v2
+    const v1, 0x7f13004d    # R.string.cap_beauty_face_supported
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    move-result v0
+    const-string v0, "beauty_in_hal_face_detection_supported"
 
-    iget-object v1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAfRegionsSupported:Landroidx/appcompat/widget/SwitchCompat;
+    const v1, 0x7f13004e    # R.string.cap_beauty_in_hal_face_detection_supported
 
-    invoke-virtual {v1, v0}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
+    const-string v0, "beauty_in_hal_face_detection_tracking_supported"
 
-    const-string v1, "ae_regions_supported"
+    const v1, 0x7f13004f    # R.string.cap_beauty_in_hal_face_detection_tracking_supported
 
-    invoke-direct {p0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->getDeviceDefaultValue(Ljava/lang/String;)Z
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    move-result v2
+    const-string v0, "beauty_in_hal_supported"
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    const v1, 0x7f130050    # R.string.cap_beauty_in_hal_supported
 
-    move-result v0
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    iget-object v1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAeRegionsSupported:Landroidx/appcompat/widget/SwitchCompat;
+    const-string v0, "bokeh_lighting_supported"
 
-    invoke-virtual {v1, v0}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+    const v1, 0x7f130051
 
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    const-string v1, "face_detection_full"
+    const-string v0, "bokeh_night_supported"
 
-    invoke-direct {p0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->getDeviceDefaultValue(Ljava/lang/String;)Z
+    const v1, 0x7f130052
 
-    move-result v2
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    const-string v0, "bokeh_special_effect_supported"
 
-    move-result v0
+    const v1, 0x7f130053
 
-    iget-object v1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchFaceDetectionFull:Landroidx/appcompat/widget/SwitchCompat;
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    invoke-virtual {v1, v0}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+    const-string v0, "bokeh_supported"
 
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
+    const v1, 0x7f130054
 
-    const-string v1, "face_detection_simple"
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    invoke-direct {p0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->getDeviceDefaultValue(Ljava/lang/String;)Z
+    const-string v0, "caf_supported"
 
-    move-result v2
+    const v1, 0x7f130055
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    move-result v0
+    const-string v0, "color_space_mode_display_p3_supported"
 
-    iget-object v1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchFaceDetectionSimple:Landroidx/appcompat/widget/SwitchCompat;
+    const v1, 0x7f130056
 
-    invoke-virtual {v1, v0}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
+    const-string v0, "composition_guide_supported"
 
-    const-string v1, "lens_distortion_correction"
+    const v1, 0x7f130057
 
-    invoke-direct {p0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->getDeviceDefaultValue(Ljava/lang/String;)Z
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    move-result v2
+    const-string v0, "depth_supported"
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    const v1, 0x7f130058
 
-    move-result v0
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
-    iget-object v1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchLensDistortionCorrection:Landroidx/appcompat/widget/SwitchCompat;
+    const-string v0, "document_detection_in_hal_supported"
 
-    invoke-virtual {v1, v0}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+    const v1, 0x7f130059
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "dynamic_fov_supported"
+
+    const v1, 0x7f13005a
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "dynamic_shot_info_supported"
+
+    const v1, 0x7f13005b
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "editable_portrait_video_supported"
+
+    const v1, 0x7f13005c
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "event_finder_supported"
+
+    const v1, 0x7f13005d
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "face_detection_full_mode_supported"
+
+    const v1, 0x7f13005e
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "face_detection_supported"
+
+    const v1, 0x7f13005f
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "focus_enhancer_supported"
+
+    const v1, 0x7f130060
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "front_photo_night_mode_supported"
+
+    const v1, 0x7f130061
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "hdr10_recording_available"
+
+    const v1, 0x7f130062
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "hyperlapse_astrography_supported"
+
+    const v1, 0x7f130063
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "lens_distortion_correction_supported"
+
+    const v1, 0x7f130064
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "live_hdr_supported"
+
+    const v1, 0x7f130065
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "log_video_supported"
+
+    const v1, 0x7f130066
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "multi_af_supported"
+
+    const v1, 0x7f130067
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "night_screen_flash_supported"
+
+    const v1, 0x7f130068
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "object_detector_supported"
+
+    const v1, 0x7f130069
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "pet_detection_supported"
+
+    const v1, 0x7f13006a
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "phase_af_supported"
+
+    const v1, 0x7f13006b
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "photo_palm_gesture_detection_supported"
+
+    const v1, 0x7f13006c
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "qr_code_detection_in_hal_supported"
+
+    const v1, 0x7f13006d
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "quick_take_recording_animation_callback_supported"
+
+    const v1, 0x7f13006e
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "recording_stop_trigger_required"
+
+    const v1, 0x7f13006f
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "removing_record_surface_while_ssm_frc_supported"
+
+    const v1, 0x7f130070
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "scene_optimizer_supported"
+
+    const v1, 0x7f130071
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "selfie_tone_mode_supported"
+
+    const v1, 0x7f130072
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "sensor_crop_supported"
+
+    const v1, 0x7f130073
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "single_bokeh_in_hal_supported"
+
+    const v1, 0x7f130074
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "smooth_zoom_supported"
+
+    const v1, 0x7f130075
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "sub_preview_callback_supported"
+
+    const v1, 0x7f130076
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "super_slow_motion_gmc_supported"
+
+    const v1, 0x7f130077
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "super_slow_motion_q_frc_supported"
+
+    const v1, 0x7f130078
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "super_slow_motion_supported"
+
+    const v1, 0x7f130079
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "sync_cancel_super_slow_motion_auto_detect_supported"
+
+    const v1, 0x7f13007a
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "touch_ae_supported"
+
+    const v1, 0x7f13007b
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "touch_af_supported"
+
+    const v1, 0x7f13007c
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "video_beauty_reconnect_maker_required"
+
+    const v1, 0x7f13007d
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "video_beauty_snapshot_supported"
+
+    const v1, 0x7f13007e
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "video_bokeh_effect_supported"
+
+    const v1, 0x7f13007f
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "video_color_space_mode_display_p3_supported"
+
+    const v1, 0x7f130080
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "video_palm_gesture_detection_supported"
+
+    const v1, 0x7f130081
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "zoom_lock_supported"
+
+    const v1, 0x7f130082
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
+
+    const-string v0, "zsl_capture_supported"
+
+    const v1, 0x7f130083
+
+    invoke-direct {p0, v0, v1}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->addCapabilitySwitch(Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -261,68 +506,6 @@
     move-result-object p1
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    return-void
-.end method
-
-.method private setupSwitchListeners()V
-    .locals 2
-
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAfSupported:Landroidx/appcompat/widget/SwitchCompat;
-
-    new-instance v1, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$1;
-
-    invoke-direct {v1, p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$1;-><init>(Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchCafSupported:Landroidx/appcompat/widget/SwitchCompat;
-
-    new-instance v1, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$2;
-
-    invoke-direct {v1, p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$2;-><init>(Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAfRegionsSupported:Landroidx/appcompat/widget/SwitchCompat;
-
-    new-instance v1, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$3;
-
-    invoke-direct {v1, p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$3;-><init>(Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchAeRegionsSupported:Landroidx/appcompat/widget/SwitchCompat;
-
-    new-instance v1, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$4;
-
-    invoke-direct {v1, p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$4;-><init>(Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchFaceDetectionFull:Landroidx/appcompat/widget/SwitchCompat;
-
-    new-instance v1, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$5;
-
-    invoke-direct {v1, p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$5;-><init>(Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchFaceDetectionSimple:Landroidx/appcompat/widget/SwitchCompat;
-
-    new-instance v1, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$6;
-
-    invoke-direct {v1, p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$6;-><init>(Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
-
-    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->switchLensDistortionCorrection:Landroidx/appcompat/widget/SwitchCompat;
-
-    new-instance v1, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$7;
-
-    invoke-direct {v1, p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity$7;-><init>(Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     return-void
 .end method
@@ -358,7 +541,17 @@
 
     iput-object p1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
 
-    invoke-direct {p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->initializeSwitches()V
+    const p1, 0x7f0a05e8    # R.id.capabilities_container
+
+    invoke-virtual {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/LinearLayout;
+
+    iput-object p1, p0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->mCapabilitiesContainer:Landroid/widget/LinearLayout;
+
+    invoke-direct {p0}, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;->initializeCapabilitySwitches()V
 
     return-void
 .end method
