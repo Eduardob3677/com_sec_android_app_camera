@@ -3183,36 +3183,37 @@
 .method public static final isDebuggableBinary()Z
     .locals 2
 
-    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    # Modified: Always return true to disable security check
+    # sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    const-string v1, "eng"
+    # const-string v1, "eng"
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    # invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    # move-result v1
 
-    if-nez v1, :cond_1
+    # if-nez v1, :cond_1
 
-    const-string v1, "userdebug"
+    # const-string v1, "userdebug"
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    # invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-eqz v0, :cond_0
+    # if-eqz v0, :cond_0
 
-    goto :goto_0
+    # goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x0
+    # :cond_0
+    # const/4 v0, 0x0
 
-    goto :goto_1
+    # goto :goto_1
 
-    :cond_1
-    :goto_0
+    # :cond_1
+    # :goto_0
     const/4 v0, 0x1
 
-    :goto_1
+    # :goto_1
     return v0
 .end method
 
@@ -4073,7 +4074,13 @@
 .method public static isSecureCamera(Landroid/content/Context;Landroid/content/Intent;)Z
     .locals 7
 
-    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    # Modified: Always return false to disable secure camera mode
+    const/4 v2, 0x0
+
+    return v2
+
+    # Original code commented out
+    # invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
@@ -4202,7 +4209,13 @@
 .method public static isSecureKeyguardLocked(Landroid/content/Context;)Z
     .locals 1
 
-    const-string v0, "keyguard"
+    # Modified: Always return false to disable keyguard security check
+    const/4 p0, 0x0
+
+    return p0
+
+    # Original code commented out
+    # const-string v0, "keyguard"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
