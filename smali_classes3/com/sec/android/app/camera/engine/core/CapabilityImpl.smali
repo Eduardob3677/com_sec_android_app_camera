@@ -3102,8 +3102,28 @@
 .end method
 
 .method public isAfSupported()Z
-    .locals 0
+    .locals 2
 
+    # Check if preference exists and override if set
+    const-string v0, "af_supported"
+
+    invoke-static {v0}, Lcom/sec/android/app/camera/setting/CapabilityPreferenceHelper;->hasPreference(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    # Return preference value
+    iget-boolean v1, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAfSupported:Z
+
+    invoke-static {v0, v1}, Lcom/sec/android/app/camera/setting/CapabilityPreferenceHelper;->getPreferenceBoolean(Ljava/lang/String;Z)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    # Return device default
     iget-boolean p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mIsAfSupported:Z
 
     return p0
