@@ -290,27 +290,6 @@
     return p0
 
     :cond_1
-    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
-
-    move-result p1
-
-    const v0, 0x7f0a0021
-
-    if-ne p1, v0, :cond_2
-
-    new-instance p1, Landroid/content/Intent;
-
-    const-class v0, Lcom/sec/android/app/camera/setting/CameraCapabilitySettingsActivity;
-
-    invoke-direct {p1, p0, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {p0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_2
     invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result p0

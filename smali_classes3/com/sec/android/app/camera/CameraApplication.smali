@@ -100,8 +100,6 @@
 
     invoke-static {p0}, Lcom/sec/android/app/camera/util/CameraResources;->init(Landroid/content/Context;)V
 
-    invoke-static {p0}, Lcom/sec/android/app/camera/setting/CapabilityPreferenceHelper;->setContext(Landroid/content/Context;)V
-
     invoke-super {p0}, Ldagger/android/b;->onCreate()V
 
     return-void

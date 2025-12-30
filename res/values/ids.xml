@@ -1751,14 +1751,4 @@
     <id name="zoom_text_layout" />
     <id name="zoom_text_view" />
     <id name="zoom_tick_slider_stub" />
-    <id name="settings_title" />
-    <id name="switch_af_supported" />
-    <id name="switch_caf_supported" />
-    <id name="switch_af_regions_supported" />
-    <id name="switch_ae_regions_supported" />
-    <id name="switch_face_detection_full" />
-    <id name="switch_face_detection_simple" />
-    <id name="switch_lens_distortion_correction" />
-    <id name="action_capability_settings" />
-    <id name="capabilities_container" />
 </resources>
