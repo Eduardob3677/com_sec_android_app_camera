@@ -10,7 +10,7 @@
 # static fields
 .field private static final PREF_DEBUG_FEATURES:Ljava/lang/String; = "pref_debug_features"
 
-.field private static final TAG:Ljava/lang/String; = "FeaturesFragment"
+.field private static final TAG:Ljava/lang/String; = "CameraAdvancedSettingsFragment"
 
 
 # instance fields
