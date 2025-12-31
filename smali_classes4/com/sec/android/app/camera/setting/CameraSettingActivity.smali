@@ -2414,6 +2414,22 @@
 
     goto :goto_0
 
+    :sswitch_c
+    const-string v1, "camera_advanced_settings"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_c
+
+    goto :goto_0
+
+    :cond_c
+    const/16 v0, 0xc
+
+    goto :goto_0
+
     :sswitch_a
     const-string v1, "advanced_recording_options"
 
@@ -2496,6 +2512,7 @@
         0x4328e021 -> :sswitch_4
         0x4392f484 -> :sswitch_3
         0x473a9249 -> :sswitch_2
+        0x584e3b7d -> :sswitch_c
         0x60ea4644 -> :sswitch_1
         0x6c781d3d -> :sswitch_0
     .end sparse-switch
@@ -2513,6 +2530,7 @@
         :pswitch_2
         :pswitch_1
         :pswitch_0
+        :pswitch_5
         :pswitch_5
     .end packed-switch
 .end method
