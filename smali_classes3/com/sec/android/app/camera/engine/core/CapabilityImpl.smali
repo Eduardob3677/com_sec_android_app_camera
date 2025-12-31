@@ -4788,40 +4788,40 @@
 .end method
 
 .method public isFusionHighResolutionSupported(Landroid/util/Size;)Z
-    .locals 15
+    .locals 10
 
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
     
-    move-result-object v10
+    move-result-object v5
     
-    if-eqz v10, :cond_default
+    if-eqz v5, :cond_default
     
-    const-string v11, "pref_camera_capabilities"
+    const-string v6, "pref_camera_capabilities"
     
-    const/4 v12, 0x0
+    const/4 v7, 0x0
     
-    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
     
-    move-result-object v10
+    move-result-object v5
     
-    const-string v11, "cap_is_fusion_high_resolution_supported"
+    const-string v6, "cap_is_fusion_high_resolution_supported"
     
-    invoke-interface {v10, v11}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    invoke-interface {v5, v6}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
     
-    move-result v13
+    move-result v8
     
-    if-eqz v13, :cond_default
+    if-eqz v8, :cond_default
     
     # Preference exists, get its value (default to false for safety)
-    const/4 v13, 0x0
+    const/4 v8, 0x0
     
-    invoke-interface {v10, v11, v13}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v5, v6, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     
-    move-result v14
+    move-result v9
     
-    return v14
+    return v9
     :try_end_pref
     .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
@@ -4982,39 +4982,39 @@
 .end method
 
 .method public isHyperlapseTrailModeSupported(I)Z
-    .locals 15
+    .locals 10
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
     
-    move-result-object v10
+    move-result-object v5
     
-    if-eqz v10, :cond_default
+    if-eqz v5, :cond_default
     
-    const-string v11, "pref_camera_capabilities"
+    const-string v6, "pref_camera_capabilities"
     
-    const/4 v12, 0x0
+    const/4 v7, 0x0
     
-    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
     
-    move-result-object v10
+    move-result-object v5
     
-    const-string v11, "cap_is_hyperlapse_trail_mode_supported"
+    const-string v6, "cap_is_hyperlapse_trail_mode_supported"
     
-    invoke-interface {v10, v11}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    invoke-interface {v5, v6}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
     
-    move-result v13
+    move-result v8
     
-    if-eqz v13, :cond_default
+    if-eqz v8, :cond_default
     
     # Preference exists, get its value (default to false for safety)
-    const/4 v13, 0x0
+    const/4 v8, 0x0
     
-    invoke-interface {v10, v11, v13}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v5, v6, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     
-    move-result v14
+    move-result v9
     
-    return v14
+    return v9
     :try_end_pref
     .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
@@ -6143,39 +6143,39 @@
 .end method
 
 .method public isSlowMotionResolutionSupported(Lcom/sec/android/app/camera/interfaces/Resolution;)Z
-    .locals 15
+    .locals 10
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
     
-    move-result-object v10
+    move-result-object v5
     
-    if-eqz v10, :cond_default
+    if-eqz v5, :cond_default
     
-    const-string v11, "pref_camera_capabilities"
+    const-string v6, "pref_camera_capabilities"
     
-    const/4 v12, 0x0
+    const/4 v7, 0x0
     
-    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
     
-    move-result-object v10
+    move-result-object v5
     
-    const-string v11, "cap_is_slow_motion_resolution_supported"
+    const-string v6, "cap_is_slow_motion_resolution_supported"
     
-    invoke-interface {v10, v11}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    invoke-interface {v5, v6}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
     
-    move-result v13
+    move-result v8
     
-    if-eqz v13, :cond_default
+    if-eqz v8, :cond_default
     
     # Preference exists, get its value (default to false for safety)
-    const/4 v13, 0x0
+    const/4 v8, 0x0
     
-    invoke-interface {v10, v11, v13}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v5, v6, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     
-    move-result v14
+    move-result v9
     
-    return v14
+    return v9
     :try_end_pref
     .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
@@ -6769,39 +6769,39 @@
 .end method
 
 .method public isVideoBeautyFaceSupported(Landroid/util/Size;I)Z
-    .locals 15
+    .locals 10
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
     
-    move-result-object v10
+    move-result-object v5
     
-    if-eqz v10, :cond_default
+    if-eqz v5, :cond_default
     
-    const-string v11, "pref_camera_capabilities"
+    const-string v6, "pref_camera_capabilities"
     
-    const/4 v12, 0x0
+    const/4 v7, 0x0
     
-    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
     
-    move-result-object v10
+    move-result-object v5
     
-    const-string v11, "cap_is_video_beauty_face_supported"
+    const-string v6, "cap_is_video_beauty_face_supported"
     
-    invoke-interface {v10, v11}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    invoke-interface {v5, v6}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
     
-    move-result v13
+    move-result v8
     
-    if-eqz v13, :cond_default
+    if-eqz v8, :cond_default
     
     # Preference exists, get its value (default to false for safety)
-    const/4 v13, 0x0
+    const/4 v8, 0x0
     
-    invoke-interface {v10, v11, v13}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v5, v6, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     
-    move-result v14
+    move-result v9
     
-    return v14
+    return v9
     :try_end_pref
     .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
@@ -7220,39 +7220,39 @@
 .end method
 
 .method public isVideoResolutionSupported(Lcom/sec/android/app/camera/interfaces/Resolution;)Z
-    .locals 15
+    .locals 10
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
     
-    move-result-object v10
+    move-result-object v5
     
-    if-eqz v10, :cond_default
+    if-eqz v5, :cond_default
     
-    const-string v11, "pref_camera_capabilities"
+    const-string v6, "pref_camera_capabilities"
     
-    const/4 v12, 0x0
+    const/4 v7, 0x0
     
-    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v5, v6, v7}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
     
-    move-result-object v10
+    move-result-object v5
     
-    const-string v11, "cap_is_video_resolution_supported"
+    const-string v6, "cap_is_video_resolution_supported"
     
-    invoke-interface {v10, v11}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    invoke-interface {v5, v6}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
     
-    move-result v13
+    move-result v8
     
-    if-eqz v13, :cond_default
+    if-eqz v8, :cond_default
     
     # Preference exists, get its value (default to false for safety)
-    const/4 v13, 0x0
+    const/4 v8, 0x0
     
-    invoke-interface {v10, v11, v13}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v5, v6, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     
-    move-result v14
+    move-result v9
     
-    return v14
+    return v9
     :try_end_pref
     .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
