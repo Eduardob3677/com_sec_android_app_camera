@@ -177,9 +177,9 @@
 
     move-result-object p1
 
-    new-instance v0, Lcom/sec/android/app/camera/setting/FeaturesSettingFragment;
+    new-instance v0, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsFragment;
 
-    invoke-direct {v0}, Lcom/sec/android/app/camera/setting/FeaturesSettingFragment;-><init>()V
+    invoke-direct {v0}, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsFragment;-><init>()V
 
     const v1, 0x7f0a026c
 
