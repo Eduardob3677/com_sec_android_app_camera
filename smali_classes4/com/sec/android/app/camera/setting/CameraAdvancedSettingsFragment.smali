@@ -846,7 +846,7 @@
 
     if-nez p0, :cond_0
 
-    const-string p0, "FeaturesFragment"
+    const-string p0, "CameraAdvancedSettingsFragment"
 
     const-string p1, "updatePreferenceAttr : preference key is null"
 
@@ -1015,7 +1015,7 @@
 .method public onCreatePreferences(Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 0
 
-    const-string p1, "CameraAdvancedFragment"
+    const-string p1, "CameraAdvancedSettingsFragment"
 
     const-string p2, "onCreatePreferences"
 
@@ -1091,7 +1091,7 @@
     # Modified: Added onPause to explicitly commit preferences when leaving the screen
     invoke-super {p0}, Landroidx/fragment/app/Fragment;->onPause()V
 
-    const-string v0, "FeaturesFragment"
+    const-string v0, "CameraAdvancedSettingsFragment"
 
     const-string v1, "onPause - committing preferences"
 
