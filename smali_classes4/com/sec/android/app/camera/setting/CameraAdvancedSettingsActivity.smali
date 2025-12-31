@@ -278,11 +278,11 @@
 
     move-result-object p0
 
-    check-cast p0, Lcom/sec/android/app/camera/setting/FeaturesSettingFragment;
+    check-cast p0, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsFragment;
 
     if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Lcom/sec/android/app/camera/setting/FeaturesSettingFragment;->resetFeatures()V
+    invoke-virtual {p0}, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsFragment;->resetFeatures()V
 
     :cond_0
     const/4 p0, 0x1
