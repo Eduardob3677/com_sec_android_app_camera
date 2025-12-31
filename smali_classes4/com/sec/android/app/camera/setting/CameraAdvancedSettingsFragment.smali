@@ -1122,7 +1122,7 @@
 .method public onPreferenceStartFragment(Landroidx/preference/PreferenceFragmentCompat;Landroidx/preference/Preference;)Z
     .locals 3
 
-    const-string p1, "FeaturesFragment"
+    const-string p1, "CameraAdvancedSettingsFragment"
 
     const-string v0, "onPreferenceStartFragment"
 
