@@ -6,6 +6,19 @@
 .implements Lcom/sec/android/app/camera/engine/interfaces/Capability;
 
 
+# static fields
+.field private static sCapabilityCache:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
 .field private mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
 
@@ -3018,7 +3031,7 @@
 .method public isActionShotSupported()Z
     .locals 15
 
-    # Try to get SharedPreferences and check for override
+    # Try to get SharedPreferences and check for override with caching
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
     
@@ -3026,30 +3039,89 @@
     
     if-eqz v10, :cond_default
     
-    const-string v11, "pref_camera_capabilities"
+    # Check if cache exists
+    sget-object v11, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->sCapabilityCache:Ljava/util/HashMap;
     
-    const/4 v12, 0x0
+    if-nez v11, :cond_check_cache
     
-    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    # Initialize cache on first access
+    new-instance v11, Ljava/util/HashMap;
     
-    move-result-object v10
+    invoke-direct {v11}, Ljava/util/HashMap;-><init>()V
     
-    const-string v11, "cap_is_action_shot_supported"
+    sput-object v11, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->sCapabilityCache:Ljava/util/HashMap;
     
-    invoke-interface {v10, v11}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    # Load all preferences into cache
+    const-string v12, "pref_camera_capabilities"
+    
+    const/4 v13, 0x0
+    
+    invoke-virtual {v10, v12, v13}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    
+    move-result-object v12
+    
+    invoke-interface {v12}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
+    
+    move-result-object v12
+    
+    invoke-interface {v12}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    
+    move-result-object v12
+    
+    invoke-interface {v12}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    
+    move-result-object v12
+    
+    :cond_cache_loop
+    invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
+    
+    move-result v13
+    
+    if-eqz v13, :cond_check_cache
+    
+    invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    
+    move-result-object v13
+    
+    check-cast v13, Ljava/util/Map$Entry;
+    
+    invoke-interface {v13}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    
+    move-result-object v14
+    
+    check-cast v14, Ljava/lang/String;
+    
+    invoke-interface {v13}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    
+    move-result-object v13
+    
+    check-cast v13, Ljava/lang/Boolean;
+    
+    invoke-virtual {v11, v14, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    
+    goto :cond_cache_loop
+    
+    :cond_check_cache
+    # Check cache for this capability
+    const-string v12, "cap_is_action_shot_supported"
+    
+    invoke-virtual {v11, v12}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
     
     move-result v13
     
     if-eqz v13, :cond_default
     
-    # Preference exists, get its value (default to false for safety)
-    const/4 v13, 0x0
+    invoke-virtual {v11, v12}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
     
-    invoke-interface {v10, v11, v13}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    move-result-object v10
     
-    move-result v14
+    check-cast v10, Ljava/lang/Boolean;
     
-    return v14
+    invoke-virtual {v10}, Ljava/lang/Boolean;->booleanValue()Z
+    
+    move-result v10
+    
+    return v10
     :try_end_pref
     .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
