@@ -1213,7 +1213,7 @@
 
     const-string v0, "onStart"
 
-    const-string v1, "FeaturesFragment"
+    sget-object v1, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsFragment;->TAG:Ljava/lang/String;
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
