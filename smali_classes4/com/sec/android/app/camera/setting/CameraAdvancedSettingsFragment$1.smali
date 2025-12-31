@@ -56,13 +56,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # Modified: Explicitly commit the preferences to ensure they're saved
-    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
     iget-object p0, p0, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsFragment$1;->this$0:Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsFragment;
 
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
