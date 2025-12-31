@@ -1221,7 +1221,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/sec/android/app/camera/setting/FeaturesSettingActivity;
+    check-cast v0, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsActivity;
 
     if-nez v0, :cond_0
 
@@ -1249,7 +1249,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/sec/android/app/camera/setting/FeaturesSettingActivity;->setSubCameraSettingTitle(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsActivity;->setSubCameraSettingTitle(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroidx/preference/PreferenceFragmentCompat;->getPreferenceScreen()Landroidx/preference/PreferenceScreen;
 
