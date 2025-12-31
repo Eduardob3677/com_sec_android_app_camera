@@ -13923,7 +13923,6 @@
     <public type="string" name="delete_my_filter" id="0x7f1302cb" />
     <public type="string" name="dep_advanced_intelligent_options" id="0x7f1302cc" />
     <public type="string" name="dep_advanced_videos" id="0x7f1302cd" />
-    <public type="string" name="dep_camera_advanced" id="0x7f1302cd" />
     <public type="string" name="dep_camera_assistant" id="0x7f1302ce" />
     <public type="string" name="dep_empty" id="0x7f1302cf" />
     <public type="string" name="dep_etc" id="0x7f1302d0" />
@@ -14215,7 +14214,6 @@
     <public type="string" name="key_advanced_recording_options" id="0x7f1303ef" />
     <public type="string" name="key_audio_playback" id="0x7f1303f0" />
     <public type="string" name="key_audio_settings_category" id="0x7f1303f1" />
-    <public type="string" name="key_camera_advanced_settings" id="0x7f1303f1" />
     <public type="string" name="key_camera_assistant" id="0x7f1303f2" />
     <public type="string" name="key_capture_more_with_wider_lens" id="0x7f1303f3" />
     <public type="string" name="key_composition_guide" id="0x7f1303f4" />
