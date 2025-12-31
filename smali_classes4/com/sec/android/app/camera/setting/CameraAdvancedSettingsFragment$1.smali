@@ -38,7 +38,7 @@
     .locals 3
 
     # Modified: Log the preference change for debugging
-    const-string v0, "FeaturesFragment"
+    const-string v0, "CameraAdvancedSettingsFragment"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
