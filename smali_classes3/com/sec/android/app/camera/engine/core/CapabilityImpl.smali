@@ -9,6 +9,8 @@
 # instance fields
 .field private mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
 
+.field private mContext:Landroid/content/Context;
+
 .field private mIsAeRegionsSupported:Z
 
 .field private mIsAfRegionsSupported:Z
