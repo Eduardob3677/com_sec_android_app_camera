@@ -3049,7 +3049,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3118,7 +3118,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3187,7 +3187,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3257,7 +3257,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3305,7 +3305,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3409,7 +3409,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3478,7 +3478,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3547,7 +3547,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3617,7 +3617,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3683,7 +3683,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3739,7 +3739,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3795,7 +3795,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3851,7 +3851,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3907,7 +3907,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -3976,7 +3976,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4024,7 +4024,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4072,7 +4072,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4141,7 +4141,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4209,7 +4209,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4278,7 +4278,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4334,7 +4334,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4390,7 +4390,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4459,7 +4459,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4528,7 +4528,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4576,7 +4576,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4642,7 +4642,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4711,7 +4711,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4769,7 +4769,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4880,7 +4880,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -4960,7 +4960,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5044,7 +5044,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5092,7 +5092,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5148,7 +5148,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5268,7 +5268,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5364,7 +5364,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5412,7 +5412,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5468,7 +5468,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5524,7 +5524,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5580,7 +5580,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5628,7 +5628,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5684,7 +5684,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5782,7 +5782,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5851,7 +5851,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5920,7 +5920,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -5976,7 +5976,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6032,7 +6032,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6089,7 +6089,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6194,7 +6194,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6263,7 +6263,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6332,7 +6332,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6403,7 +6403,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6461,7 +6461,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6517,7 +6517,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6586,7 +6586,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6634,7 +6634,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6701,7 +6701,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6907,7 +6907,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -6978,7 +6978,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -7047,7 +7047,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -7095,7 +7095,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -7144,7 +7144,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -7265,7 +7265,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
@@ -7334,7 +7334,7 @@
     
     return v4
     :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
+    .catch Ljava/lang/Exception; {:try_start_pref .. :try_end_pref} :catch_pref
     
     :catch_pref
     # If any exception occurs, fall through to default behavior
