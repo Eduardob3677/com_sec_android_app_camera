@@ -149,7 +149,7 @@
 
     new-instance v1, Lcom/sec/android/app/camera/setting/c0;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x6
 
     invoke-direct {v1, p0, v2}, Lcom/sec/android/app/camera/setting/c0;-><init>(Ljava/lang/Object;I)V
 
