@@ -367,13 +367,13 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p0, p0, Lcom/sec/android/app/camera/setting/CameraSettingActivity;->mActivityChooserGetterMap:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/sec/android/app/camera/setting/CameraSettingActivity;->mActivityChooserGetterMap:Ljava/util/HashMap;
 
-    const-string v0, "features"
+    const-string v1, "features"
 
-    const-class v1, Lcom/sec/android/app/camera/setting/FeaturesSettingActivity;
+    const-class v2, Lcom/sec/android/app/camera/setting/FeaturesSettingActivity;
 
-    invoke-virtual {p0, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object p0, p0, Lcom/sec/android/app/camera/setting/CameraSettingActivity;->mActivityChooserGetterMap:Ljava/util/HashMap;
 
