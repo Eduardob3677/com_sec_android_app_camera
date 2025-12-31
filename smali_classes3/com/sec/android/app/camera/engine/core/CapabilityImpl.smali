@@ -3016,6 +3016,8 @@
 .end method
 
 .method public isActionShotSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3085,6 +3087,8 @@
 .end method
 
 .method public isAdvancedZeroShutterLagSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3154,6 +3158,8 @@
 .end method
 
 .method public isAeAfLockSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3224,6 +3230,8 @@
 .end method
 
 .method public isAfSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3272,6 +3280,8 @@
 .end method
 
 .method public isAnamorphicLensPreviewSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3376,6 +3386,8 @@
 .end method
 
 .method public isAutoFramingSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3445,6 +3457,8 @@
 .end method
 
 .method public isBeautyFaceSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3514,6 +3528,8 @@
 .end method
 
 .method public isBeautyInHalFaceDetectionSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3584,6 +3600,8 @@
 .end method
 
 .method public isBeautyInHalFaceDetectionTrackingSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3650,6 +3668,8 @@
 .end method
 
 .method public isBeautyInHalSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3706,6 +3726,8 @@
 .end method
 
 .method public isBokehLightingSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3762,6 +3784,8 @@
 .end method
 
 .method public isBokehNightSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3818,6 +3842,8 @@
 .end method
 
 .method public isBokehSpecialEffectSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3874,6 +3900,8 @@
 .end method
 
 .method public isBokehSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3943,6 +3971,8 @@
 .end method
 
 .method public isCafSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -3991,6 +4021,8 @@
 .end method
 
 .method public isColorSpaceModeDisplayP3Supported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4039,6 +4071,8 @@
 .end method
 
 .method public isCompositionGuideSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4108,6 +4142,8 @@
 .end method
 
 .method public isDepthSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4176,6 +4212,8 @@
 .end method
 
 .method public isDocumentDetectionInHalSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4245,6 +4283,8 @@
 .end method
 
 .method public isDynamicFovSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4301,6 +4341,8 @@
 .end method
 
 .method public isDynamicShotInfoSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4357,6 +4399,8 @@
 .end method
 
 .method public isEditablePortraitVideoSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4426,6 +4470,8 @@
 .end method
 
 .method public isEventFinderSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4495,6 +4541,8 @@
 .end method
 
 .method public isFaceDetectionFullModeSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4543,6 +4591,8 @@
 .end method
 
 .method public isFaceDetectionSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4609,6 +4659,8 @@
 .end method
 
 .method public isFocusEnhancerSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4678,6 +4730,8 @@
 .end method
 
 .method public isFrontPhotoNightModeSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -4847,6 +4901,8 @@
 .end method
 
 .method public isHyperlapseAstrographySupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5011,6 +5067,8 @@
 .end method
 
 .method public isLensDistortionCorrectionSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5059,6 +5117,8 @@
 .end method
 
 .method public isLiveHdrSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5115,6 +5175,8 @@
 .end method
 
 .method public isLogVideoSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5235,6 +5297,8 @@
 .end method
 
 .method public isMultiAfSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5331,6 +5395,8 @@
 .end method
 
 .method public isNightScreenFlashSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5379,6 +5445,8 @@
 .end method
 
 .method public isObjectDetectorSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5435,6 +5503,8 @@
 .end method
 
 .method public isPetDetectionSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5491,6 +5561,8 @@
 .end method
 
 .method public isPhaseAfSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5547,6 +5619,8 @@
 .end method
 
 .method public isPhotoPalmGestureDetectionSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5595,6 +5669,8 @@
 .end method
 
 .method public isQrCodeDetectionInHalSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5651,6 +5727,8 @@
 .end method
 
 .method public isQuickTakeRecordingAnimationCallbackSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5749,6 +5827,8 @@
 .end method
 
 .method public isRemovingRecordSurfaceWhileSsmFrcSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5818,6 +5898,8 @@
 .end method
 
 .method public isSceneOptimizerSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5887,6 +5969,8 @@
 .end method
 
 .method public isSelfieToneModeSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5943,6 +6027,8 @@
 .end method
 
 .method public isSensorCropSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -5999,6 +6085,8 @@
 .end method
 
 .method public isSingleBokehInHalSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6161,6 +6249,8 @@
 .end method
 
 .method public isSmoothZoomSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6230,6 +6320,8 @@
 .end method
 
 .method public isSubPreviewCallbackSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6299,6 +6391,8 @@
 .end method
 
 .method public isSuperSlowMotionGmcSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6428,6 +6522,8 @@
 .end method
 
 .method public isSuperSlowMotionSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6484,6 +6580,8 @@
 .end method
 
 .method public isSyncCancelSuperSlowMotionAutoDetectSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6553,6 +6651,8 @@
 .end method
 
 .method public isTouchAeSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6601,6 +6701,8 @@
 .end method
 
 .method public isTouchAfSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6874,6 +6976,8 @@
 .end method
 
 .method public isVideoBeautySnapshotSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -6945,6 +7049,8 @@
 .end method
 
 .method public isVideoBokehEffectSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -7014,6 +7120,8 @@
 .end method
 
 .method public isVideoColorSpaceModeDisplayP3Supported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -7062,6 +7170,8 @@
 .end method
 
 .method public isVideoPalmGestureDetectionSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -7232,6 +7342,8 @@
 .end method
 
 .method public isZoomLockSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
@@ -7301,6 +7413,8 @@
 .end method
 
 .method public isZslCaptureSupported()Z
+    .locals 5
+
     # Try to get SharedPreferences and check for override
     :try_start_pref
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
