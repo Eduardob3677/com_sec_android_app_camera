@@ -4734,48 +4734,8 @@
 .end method
 
 .method public isFusionHighResolutionSupported(Landroid/util/Size;)Z
-    .locals 5
+    .locals 1
 
-    # Try to get SharedPreferences and check for override
-    :try_start_pref
-    invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
-    
-    move-result-object v0
-    
-    if-eqz v0, :cond_default
-    
-    const-string v1, "pref_camera_capabilities"
-    
-    const/4 v2, 0x0
-    
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-    
-    move-result-object v0
-    
-    const-string v1, "cap_is_fusion_high_resolution_supported"
-    
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-    
-    move-result v3
-    
-    if-eqz v3, :cond_default
-    
-    # Preference exists, get its value (default to false for safety)
-    const/4 v3, 0x0
-    
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-    
-    move-result v4
-    
-    return v4
-    :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
-    
-    :catch_pref
-    # If any exception occurs, fall through to default behavior
-    
-    :cond_default
-    # Original hardware capability check
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
 
     invoke-virtual {p0}, Lcom/samsung/android/camera/core2/CamCapability;->V()Ljava/util/List;
@@ -4927,46 +4887,6 @@
 
 .method public isHyperlapseTrailModeSupported(I)Z
     .locals 5
-    # Try to get SharedPreferences and check for override
-    :try_start_pref
-    invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
-    
-    move-result-object v0
-    
-    if-eqz v0, :cond_default
-    
-    const-string v1, "pref_camera_capabilities"
-    
-    const/4 v2, 0x0
-    
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-    
-    move-result-object v0
-    
-    const-string v1, "cap_is_hyperlapse_trail_mode_supported"
-    
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-    
-    move-result v3
-    
-    if-eqz v3, :cond_default
-    
-    # Preference exists, get its value (default to false for safety)
-    const/4 v3, 0x0
-    
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-    
-    move-result v4
-    
-    return v4
-    :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
-    
-    :catch_pref
-    # If any exception occurs, fall through to default behavior
-    
-    :cond_default
-    # Original hardware capability check
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
 
@@ -6055,47 +5975,7 @@
 .end method
 
 .method public isSlowMotionResolutionSupported(Lcom/sec/android/app/camera/interfaces/Resolution;)Z
-    .locals 5
-    # Try to get SharedPreferences and check for override
-    :try_start_pref
-    invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
-    
-    move-result-object v0
-    
-    if-eqz v0, :cond_default
-    
-    const-string v1, "pref_camera_capabilities"
-    
-    const/4 v2, 0x0
-    
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-    
-    move-result-object v0
-    
-    const-string v1, "cap_is_slow_motion_resolution_supported"
-    
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-    
-    move-result v3
-    
-    if-eqz v3, :cond_default
-    
-    # Preference exists, get its value (default to false for safety)
-    const/4 v3, 0x0
-    
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-    
-    move-result v4
-    
-    return v4
-    :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
-    
-    :catch_pref
-    # If any exception occurs, fall through to default behavior
-    
-    :cond_default
-    # Original hardware capability check
+    .locals 3
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
 
@@ -6368,48 +6248,8 @@
 .end method
 
 .method public isSuperSlowMotionQFrcSupported()Z
-    .locals 5
+    .locals 0
 
-    # Try to get SharedPreferences and check for override
-    :try_start_pref
-    invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
-    
-    move-result-object v0
-    
-    if-eqz v0, :cond_default
-    
-    const-string v1, "pref_camera_capabilities"
-    
-    const/4 v2, 0x0
-    
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-    
-    move-result-object v0
-    
-    const-string v1, "cap_is_super_slow_motion_qfrc_supported"
-    
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-    
-    move-result v3
-    
-    if-eqz v3, :cond_default
-    
-    # Preference exists, get its value (default to false for safety)
-    const/4 v3, 0x0
-    
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-    
-    move-result v4
-    
-    return v4
-    :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
-    
-    :catch_pref
-    # If any exception occurs, fall through to default behavior
-    
-    :cond_default
-    # Original hardware capability check
     invoke-virtual {p0}, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->getSuperSlowMotionQFrcFps()I
 
     move-result p0
@@ -6667,47 +6507,7 @@
 .end method
 
 .method public isVideoBeautyFaceSupported(Landroid/util/Size;I)Z
-    .locals 5
-    # Try to get SharedPreferences and check for override
-    :try_start_pref
-    invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
-    
-    move-result-object v0
-    
-    if-eqz v0, :cond_default
-    
-    const-string v1, "pref_camera_capabilities"
-    
-    const/4 v2, 0x0
-    
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-    
-    move-result-object v0
-    
-    const-string v1, "cap_is_video_beauty_face_supported"
-    
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-    
-    move-result v3
-    
-    if-eqz v3, :cond_default
-    
-    # Preference exists, get its value (default to false for safety)
-    const/4 v3, 0x0
-    
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-    
-    move-result v4
-    
-    return v4
-    :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
-    
-    :catch_pref
-    # If any exception occurs, fall through to default behavior
-    
-    :cond_default
-    # Original hardware capability check
+    .locals 4
 
     iget-object v0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
 
@@ -7110,47 +6910,7 @@
 .end method
 
 .method public isVideoResolutionSupported(Lcom/sec/android/app/camera/interfaces/Resolution;)Z
-    .locals 5
-    # Try to get SharedPreferences and check for override
-    :try_start_pref
-    invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
-    
-    move-result-object v0
-    
-    if-eqz v0, :cond_default
-    
-    const-string v1, "pref_camera_capabilities"
-    
-    const/4 v2, 0x0
-    
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-    
-    move-result-object v0
-    
-    const-string v1, "cap_is_video_resolution_supported"
-    
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-    
-    move-result v3
-    
-    if-eqz v3, :cond_default
-    
-    # Preference exists, get its value (default to false for safety)
-    const/4 v3, 0x0
-    
-    invoke-interface {v0, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-    
-    move-result v4
-    
-    return v4
-    :try_end_pref
-    .catch Ljava/lang/Exception; :try_start_pref :try_end_pref :catch_pref
-    
-    :catch_pref
-    # If any exception occurs, fall through to default behavior
-    
-    :cond_default
-    # Original hardware capability check
+    .locals 3
 
     iget-object p0, p0, Lcom/sec/android/app/camera/engine/core/CapabilityImpl;->mCamCapability:Lcom/samsung/android/camera/core2/CamCapability;
 
