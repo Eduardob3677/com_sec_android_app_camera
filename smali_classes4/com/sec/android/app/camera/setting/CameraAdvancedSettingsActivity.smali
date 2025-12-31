@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "FeatureActivity"
+.field private static final TAG:Ljava/lang/String; = "CameraAdvancedSettingsActivity"
 
 
 # instance fields
