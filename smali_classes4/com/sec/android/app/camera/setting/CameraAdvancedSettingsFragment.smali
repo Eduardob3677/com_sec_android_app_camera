@@ -968,7 +968,7 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
 
-    const-string v0, "FeaturesFragment"
+    const-string v0, "CameraAdvancedSettingsFragment"
 
     const-string v1, "onCreate"
 
@@ -1060,7 +1060,7 @@
 
     invoke-super {p0}, Landroidx/fragment/app/Fragment;->onDestroy()V
 
-    const-string v0, "CameraAdvancedFragment"
+    const-string v0, "CameraAdvancedSettingsFragment"
 
     const-string v1, "onDestroy"
 

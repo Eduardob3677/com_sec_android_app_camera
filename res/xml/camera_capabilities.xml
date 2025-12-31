@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/camera_advanced_settings">
+<PreferenceScreen android:title="@string/camera_advanced_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
         <com.sec.android.app.camera.setting.CameraSwitchPreference
             android:key="cap_is_action_shot_supported"
             android:title="@string/cap_is_action_shot_supported"
@@ -313,8 +313,7 @@
             android:persistent="true" />
         <com.sec.android.app.camera.setting.CameraSwitchPreference
             android:key="cap_is_zsl_capture_supported"
-            android:title="@string/cap_is_zsl_capture_supported"
+                    android:title="@string/cap_is_zsl_capture_supported"
             android:defaultValue="false"
             android:persistent="true" />
-    </PreferenceCategory>
 </PreferenceScreen>
