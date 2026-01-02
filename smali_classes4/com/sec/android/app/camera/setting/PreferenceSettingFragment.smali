@@ -3241,218 +3241,229 @@
 .method private updateFeaturedPreference()V
     .locals 1
 
-    sget-object v0, Lx1/c;->SUPPORT_OBJECT_TRACKING_AF:Lx1/c;
+    # Modified: Enable TRACKING_AF (Object Tracking Autofocus) for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_OBJECT_TRACKING_AF:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_0
+    # if-nez v0, :cond_0
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->TRACKING_AF:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->TRACKING_AF:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_0
-    sget-object v0, Lx1/c;->SUPPORT_CAMCORDER_ANTI_SHAKE:Lx1/c;
+    # Modified: Enable VIDEO_STABILISATION for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_CAMCORDER_ANTI_SHAKE:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_1
+    # if-nez v0, :cond_1
 
-    sget-object v0, Lx1/c;->SUPPORT_CAMCORDER_FRONT_ANTI_SHAKE:Lx1/c;
+    # sget-object v0, Lx1/c;->SUPPORT_CAMCORDER_FRONT_ANTI_SHAKE:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_1
+    # if-nez v0, :cond_1
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->VIDEO_STABILISATION:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->VIDEO_STABILISATION:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_1
-    sget-object v0, Lx1/c;->SUPPORT_PREVIEW_FIT_TO_FULL_SCREEN:Lx1/c;
+    # Modified: Enable VIEW_MODE (fit to full screen) for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_PREVIEW_FIT_TO_FULL_SCREEN:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_2
+    # if-nez v0, :cond_2
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->VIEW_MODE:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->VIEW_MODE:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_2
-    sget-object v0, Lx1/c;->SUPPORT_HOME_KEY_QUICK_LAUNCH:Lx1/c;
+    # Modified: Enable QUICK_LAUNCH (home/power key quick launch) for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_HOME_KEY_QUICK_LAUNCH:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_3
+    # if-nez v0, :cond_3
 
-    sget-object v0, Lx1/c;->SUPPORT_POWER_KEY_QUICK_LAUNCH:Lx1/c;
+    # sget-object v0, Lx1/c;->SUPPORT_POWER_KEY_QUICK_LAUNCH:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_3
+    # if-nez v0, :cond_3
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->QUICK_LAUNCH:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->QUICK_LAUNCH:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_3
-    sget-object v0, Lx1/c;->SUPPORT_COMPOSITION_GUIDE:Lx1/c;
+    # Modified: Enable COMPOSITION_GUIDE for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_COMPOSITION_GUIDE:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_4
+    # if-nez v0, :cond_4
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->COMPOSITION_GUIDE:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->COMPOSITION_GUIDE:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_4
-    sget-object v0, Lx1/c;->SUPPORT_SHUTTER_SOUND_MENU:Lx1/c;
+    # Modified: Enable SHUTTER_SOUND menu for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_SHUTTER_SOUND_MENU:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_5
+    # if-nez v0, :cond_5
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->SHUTTER_SOUND:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->SHUTTER_SOUND:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_5
-    sget-object v0, Lx1/c;->SUPPORT_BACK_WIDE_CAMERA:Lx1/c;
+    # Modified: Enable save_options and PICTURE_FORMAT for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_BACK_WIDE_CAMERA:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_6
+    # if-nez v0, :cond_6
 
-    sget-object v0, Lx1/c;->SUPPORT_HEIF_FORMAT:Lx1/c;
+    # sget-object v0, Lx1/c;->SUPPORT_HEIF_FORMAT:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_6
+    # if-nez v0, :cond_6
 
-    sget-object v0, Lx1/c;->SUPPORT_WIDE_LENS_CORRECTION:Lx1/c;
+    # sget-object v0, Lx1/c;->SUPPORT_WIDE_LENS_CORRECTION:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_6
+    # if-nez v0, :cond_6
 
-    const-string v0, "save_options"
+    # const-string v0, "save_options"
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
-    goto :goto_0
+    # goto :goto_0
 
-    :cond_6
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->PICTURE_FORMAT:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # :cond_6
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->PICTURE_FORMAT:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :goto_0
-    sget-object v0, Lx1/c;->SUPPORT_VIDEO_AUTO_FPS:Lx1/c;
+    # Modified: Enable VIDEO_AUTO_FPS for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_VIDEO_AUTO_FPS:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_7
+    # if-nez v0, :cond_7
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->VIDEO_AUTO_FPS:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->VIDEO_AUTO_FPS:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_7
-    sget-object v0, Lx1/c;->SUPPORT_SMART_SCAN:Lx1/c;
+    # Modified: Enable SMART_SCAN (document scan) for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_SMART_SCAN:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_8
+    # if-nez v0, :cond_8
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->ADDITIONAL_SCENE_DOCUMENT_SCAN:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->ADDITIONAL_SCENE_DOCUMENT_SCAN:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_8
-    sget-object v0, Lx1/c;->SUPPORT_LOG_VIDEO:Lx1/c;
+    # Modified: Enable LOG_VIDEO (pro video with log profile) for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_LOG_VIDEO:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_9
+    # if-nez v0, :cond_9
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->LOG_VIDEO:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->LOG_VIDEO:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_9
-    const-string v0, "customization_service"
+    # Modified: Enable customization_service menu for all devices
+    # const-string v0, "customization_service"
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -4697,21 +4708,22 @@
     invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_2
-    sget-object v0, Lx1/c;->SUPPORT_QR_CODE_DETECTION:Lx1/c;
+    # Modified: Enable QR_CODE_DETECTION for all devices
+    # sget-object v0, Lx1/c;->SUPPORT_QR_CODE_DETECTION:Lx1/c;
 
-    invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
+    # invoke-static {v0}, Ll4/f;->h(Lx1/c;)Z
 
-    move-result v0
+    # move-result v0
 
-    if-nez v0, :cond_3
+    # if-nez v0, :cond_3
 
-    sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->QR_CODE_DETECTION:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
+    # sget-object v0, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->QR_CODE_DETECTION:Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;
 
-    invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
+    # invoke-virtual {v0}, Lcom/sec/android/app/camera/interfaces/CameraSettings$Key;->getPreferenceKey()Ljava/lang/String;
 
-    move-result-object v0
+    # move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     :cond_3
     iget-boolean v0, p0, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->mIsSecureCamera:Z
@@ -4731,9 +4743,10 @@
     invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Landroidx/preference/Preference;)V
 
     :cond_4
-    const-string v0, "how_to_use"
+    # Modified: Keep how_to_use menu visible for all devices
+    # const-string v0, "how_to_use"
 
-    invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
+    # invoke-direct {p0, v0}, Lcom/sec/android/app/camera/setting/PreferenceSettingFragment;->removePreference(Ljava/lang/CharSequence;)V
 
     sget-object v0, Lx1/c;->SUPPORT_CAMERA_ASSISTANT:Lx1/c;
 
