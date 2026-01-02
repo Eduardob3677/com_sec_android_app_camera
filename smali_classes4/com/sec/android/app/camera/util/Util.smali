@@ -4195,14 +4195,8 @@
 .method public static isSecureFolderMode()Z
     .locals 1
 
-    invoke-static {}, Landroid/os/UserHandle;->semGetMyUserId()I
-
-    move-result v0
-
-    invoke-static {v0}, Lcom/samsung/android/knox/SemPersonaManager;->isSecureFolderId(I)Z
-
-    move-result v0
-
+    # Modified: Always return false to disable Secure Folder mode restrictions
+    const/4 v0, 0x0
     return v0
 .end method
 

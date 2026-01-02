@@ -20,7 +20,8 @@ Modificar el APK de Samsung Camera para:
 2. ✅ Desactivar verificaciones de seguridad e integridad
 3. ✅ Habilitar funcionalidades de desarrollo
 4. ✅ Eliminar restricciones de flash/grabación con batería baja
-5. ✅ **NUEVO:** Habilitar 9 características profesionales adicionales de cámara
+5. ✅ Habilitar 9 características profesionales adicionales de cámara
+6. ✅ **NUEVO:** Habilitar 6 funciones y menús adicionales (QR, Save Options, Help, etc.)
 
 ---
 
@@ -185,14 +186,38 @@ Cuando la batería está por debajo del 15%, la cámara desactiva el flash/antor
 
 ---
 
+### Modificación 7: Funciones y Menús Adicionales (NUEVO)
+
+**Archivos:** `smali_classes4/com/sec/android/app/camera/setting/PreferenceSettingFragment.smali` y `smali_classes4/com/sec/android/app/camera/util/Util.smali`
+
+**Características Adicionales Habilitadas:**
+
+1. **QR Code Detection** - Escaneo automático de códigos QR y códigos de barras
+2. **Customization Service** - Menú de servicios de personalización de Samsung
+3. **How To Use / Help Menu** - Sistema de ayuda y tutoriales integrado
+4. **Save Options** - Opciones avanzadas de guardado y formato
+5. **Picture Format** - Selección de formato de imagen (JPEG, HEIF, RAW)
+6. **Secure Folder Mode Disabled** - Sin restricciones en Samsung Secure Folder
+
+**Resultado:**
+- ✅ 6 funciones y menús adicionales disponibles
+- ✅ Escaneo QR integrado en la cámara
+- ✅ Más opciones de formato y guardado
+- ✅ Ayuda y tutoriales accesibles
+- ✅ Sin restricciones de Secure Folder
+
+⚠️ **NOTA:** Ver [EXTENDED_FEATURES.md](EXTENDED_FEATURES.md) para documentación completa de estas características.
+
+---
+
 ## 📁 ARCHIVOS MODIFICADOS
 
 ### 1. Código Smali (3 archivos)
 
 | Archivo | Líneas Modificadas | Tipo de Cambio |
 |---------|-------------------|----------------|
-| `smali_classes4/com/sec/android/app/camera/setting/PreferenceSettingFragment.smali` | 4799-4808, 3244-3460 | Comentado código de remoción de características |
-| `smali_classes4/com/sec/android/app/camera/util/Util.smali` | 3183-3217, 4074-4187, 4209-4243 | Retornos forzados |
+| `smali_classes4/com/sec/android/app/camera/setting/PreferenceSettingFragment.smali` | 4799-4808, 3244-3466, 3367-3406, 4708-4747 | Características y menús habilitados |
+| `smali_classes4/com/sec/android/app/camera/util/Util.smali` | 3183-3217, 4074-4187, 4209-4243, 4195-4207 | Retornos forzados, seguridad deshabilitada |
 | `smali_classes3/com/sec/android/app/camera/provider/CameraTemperatureManager.smali` | 759-777, 768-808, 821-828 | Restricciones de flash eliminadas |
 
 ### 2. Recursos Verificados (ya existentes)
@@ -469,13 +494,15 @@ adb install camera_modified_signed.apk
 | Métrica | Valor |
 |---------|-------|
 | Archivos smali modificados | 3 |
-| Líneas de código modificadas | ~310 |
-| Métodos modificados | 16 |
-| Restricciones eliminadas | 16 |
-| Características adicionales habilitadas | 9 |
+| Líneas de código modificadas | ~380 |
+| Métodos modificados | 20 |
+| Restricciones eliminadas | 20 |
+| Características profesionales habilitadas | 9 |
+| Funciones y menús adicionales | 6 |
+| **Total de características desbloqueadas** | **19** |
 | Recursos verificados | 15+ |
-| Documentos generados | 8 |
-| Commits realizados | 7+ |
+| Documentos generados | 9 |
+| Commits realizados | 9+ |
 
 ---
 
@@ -489,15 +516,21 @@ adb install camera_modified_signed.apk
 - [x] Modificar isFlashRestrictionRequired() → retorna false
 - [x] Modificar isLowBatteryStatus() → retorna false
 - [x] Modificar isBatteryTemperatureLowToUseFlash() → retorna false
-- [x] Habilitar TRACKING_AF (Object Tracking) → comentar remoción (NUEVO)
-- [x] Habilitar VIDEO_STABILISATION → comentar remoción (NUEVO)
-- [x] Habilitar VIEW_MODE → comentar remoción (NUEVO)
-- [x] Habilitar QUICK_LAUNCH → comentar remoción (NUEVO)
-- [x] Habilitar COMPOSITION_GUIDE → comentar remoción (NUEVO)
-- [x] Habilitar SHUTTER_SOUND → comentar remoción (NUEVO)
-- [x] Habilitar VIDEO_AUTO_FPS → comentar remoción (NUEVO)
-- [x] Habilitar SMART_SCAN → comentar remoción (NUEVO)
-- [x] Habilitar LOG_VIDEO → comentar remoción (NUEVO)
+- [x] Habilitar TRACKING_AF (Object Tracking) → comentar remoción
+- [x] Habilitar VIDEO_STABILISATION → comentar remoción
+- [x] Habilitar VIEW_MODE → comentar remoción
+- [x] Habilitar QUICK_LAUNCH → comentar remoción
+- [x] Habilitar COMPOSITION_GUIDE → comentar remoción
+- [x] Habilitar SHUTTER_SOUND → comentar remoción
+- [x] Habilitar VIDEO_AUTO_FPS → comentar remoción
+- [x] Habilitar SMART_SCAN → comentar remoción
+- [x] Habilitar LOG_VIDEO → comentar remoción
+- [x] Habilitar QR_CODE_DETECTION → comentar remoción (NUEVO)
+- [x] Habilitar customization_service → comentar remoción (NUEVO)
+- [x] Habilitar how_to_use → comentar remoción (NUEVO)
+- [x] Habilitar save_options → comentar remoción (NUEVO)
+- [x] Habilitar PICTURE_FORMAT → comentar remoción (NUEVO)
+- [x] Modificar isSecureFolderMode() → retorna false (NUEVO)
 
 ### Verificación de Recursos
 - [x] Verificar layouts XML existen
@@ -513,7 +546,8 @@ adb install camera_modified_signed.apk
 - [x] Crear FLASH_RESTRICTIONS_REMOVED.md
 - [x] Crear SAFETY_WARNING.md
 - [x] Crear BUILD_INSTRUCTIONS.md
-- [x] Crear ADDITIONAL_FEATURES_ENABLED.md (NUEVO)
+- [x] Crear ADDITIONAL_FEATURES_ENABLED.md
+- [x] Crear EXTENDED_FEATURES.md (NUEVO)
 - [x] Actualizar README.md (este documento)
 
 ### Control de Versiones
@@ -546,7 +580,7 @@ adb install camera_modified_signed.apk
    - Sin restricción con OTG conectado
    - **Grabación de video con flash disponible a cualquier nivel de batería**
 
-4. ✅ **Características Profesionales Adicionales Habilitadas (NUEVO)**
+4. ✅ **Características Profesionales Adicionales Habilitadas**
    - **Object Tracking AF** - Seguimiento automático de sujetos en movimiento
    - **Video Stabilization** - Estabilización electrónica/óptica para video
    - **View Mode** - Opciones de vista de pantalla completa
@@ -558,22 +592,32 @@ adb install camera_modified_signed.apk
    - **LOG Video** - Grabación profesional con perfil LOG para post-producción
    - **Total: 9 características profesionales nuevas disponibles**
 
-5. ✅ **Recursos verificados**
+5. ✅ **Funciones y Menús Adicionales Habilitados (NUEVO)**
+   - **QR Code Detection** - Escaneo automático de códigos QR/barras en el visor
+   - **Customization Service** - Servicios de personalización de Samsung
+   - **How To Use Menu** - Sistema integrado de ayuda y tutoriales
+   - **Save Options** - Opciones avanzadas de guardado, formato y almacenamiento
+   - **Picture Format** - Selección de formato (JPEG, HEIF, RAW cuando disponible)
+   - **Secure Folder Unrestricted** - Sin restricciones en Samsung Secure Folder
+   - **Total: 6 funciones y menús adicionales disponibles**
+
+6. ✅ **Recursos verificados**
    - Todos los XML necesarios existen
    - Todos los IDs están registrados
    - Manifest correctamente configurado
 
-6. ✅ **Documentación completa**
-   - 8 documentos detallados creados
+7. ✅ **Documentación completa**
+   - 9 documentos detallados creados
    - Instrucciones claras de compilación e instalación
    - Advertencias de seguridad exhaustivas incluidas
-   - Documentación completa de características adicionales
+   - Documentación completa de todas las características
 
-**Estado del Proyecto:** ✅ COMPLETADO CON MEJORAS ADICIONALES
+**Estado del Proyecto:** ✅ COMPLETADO CON 19 CARACTERÍSTICAS DESBLOQUEADAS
 
 ⚠️ **IMPORTANTE:** 
 - Por favor lea [SAFETY_WARNING.md](SAFETY_WARNING.md) antes de usar el flash con batería baja
-- Consulte [ADDITIONAL_FEATURES_ENABLED.md](ADDITIONAL_FEATURES_ENABLED.md) para detalles sobre compatibilidad de características
+- Consulte [ADDITIONAL_FEATURES_ENABLED.md](ADDITIONAL_FEATURES_ENABLED.md) para detalles sobre las 9 características profesionales
+- Consulte [EXTENDED_FEATURES.md](EXTENDED_FEATURES.md) para detalles sobre las 6 funciones adicionales
 
 ---
 
@@ -584,7 +628,8 @@ Para más información sobre las modificaciones, consultar:
 - `RECURSOS_VERIFICADOS.md` - Verificación de recursos
 - `SEGURIDAD_DESACTIVADA.md` - Cambios de seguridad
 - `FLASH_RESTRICTIONS_REMOVED.md` - Eliminación de restricciones de flash
-- `ADDITIONAL_FEATURES_ENABLED.md` - **9 características profesionales adicionales (NUEVO)**
+- `ADDITIONAL_FEATURES_ENABLED.md` - **9 características profesionales adicionales**
+- `EXTENDED_FEATURES.md` - **6 funciones y menús adicionales (NUEVO)**
 - `SAFETY_WARNING.md` - Advertencias de seguridad importantes
 - `BUILD_INSTRUCTIONS.md` - Instrucciones de compilación e instalación
 
@@ -593,4 +638,4 @@ Para más información sobre las modificaciones, consultar:
 **Fecha de Modificación:** 2 de Enero de 2026  
 **Versión del APK:** com.sec.android.app.camera (decompilado)  
 **Branch:** copilot/add-more-mods  
-**Última Actualización:** 9 características profesionales adicionales habilitadas + Documentación actualizada
+**Última Actualización:** 19 características totales habilitadas (9 profesionales + 6 adicionales + 4 básicas)
