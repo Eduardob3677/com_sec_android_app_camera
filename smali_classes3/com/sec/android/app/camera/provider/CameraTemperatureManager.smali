@@ -768,40 +768,8 @@
 .method private isFlashRestrictionRequired()Z
     .locals 2
 
-    invoke-direct {p0}, Lcom/sec/android/app/camera/provider/CameraTemperatureManager;->isLowBatteryStatus()Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_0
-
-    return v1
-
-    :cond_0
-    invoke-direct {p0}, Lcom/sec/android/app/camera/provider/CameraTemperatureManager;->isBatteryTemperatureLowToUseFlash()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    return v1
-
-    :cond_1
-    iget-boolean v0, p0, Lcom/sec/android/app/camera/provider/CameraTemperatureManager;->mIsFlashTemperatureHighToUse:Z
-
-    if-eqz v0, :cond_2
-
-    return v1
-
-    :cond_2
-    iget-boolean p0, p0, Lcom/sec/android/app/camera/provider/CameraTemperatureManager;->mIsFlashDisabledByOTG:Z
-
-    if-eqz p0, :cond_3
-
-    return v1
-
-    :cond_3
+    # Modified: Always return false to disable ALL flash restrictions
+    # (low battery, cold temp, high temp, OTG connection)
     const/4 p0, 0x0
 
     return p0
