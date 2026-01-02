@@ -409,6 +409,44 @@ After installation, test each feature:
 
 - **Non-Samsung Devices**: May have limited functionality. The app may install but many features may not work correctly.
 
+### What Happens When Features Don't Work?
+
+Different features may fail in different ways depending on hardware support:
+
+**Possible Failure Scenarios:**
+
+1. **Feature Appears But Does Nothing**
+   - Setting toggle works but no visible effect
+   - Example: Tracking AF toggle may not actually track subjects
+   - Solution: Feature is cosmetic only, hardware doesn't support it
+
+2. **Feature Is Grayed Out**
+   - Menu item visible but disabled
+   - Example: LOG Video may show as unavailable
+   - Solution: App detected hardware limitation at runtime
+
+3. **App Crashes When Enabled**
+   - Toggling feature causes camera to freeze or crash
+   - Example: Video stabilization may crash without gyroscope
+   - Solution: Disable the feature and avoid using it
+
+4. **Partial Functionality**
+   - Feature works in some modes but not others
+   - Example: Stabilization works for rear but not front camera
+   - Solution: Use feature only in supported modes
+
+5. **Silent Failure**
+   - Feature appears to work but produces no results
+   - Example: Smart Scan detects document but doesn't enhance it
+   - Solution: Feature UI works but processing isn't supported
+
+**Recommended Testing Approach:**
+1. Enable one feature at a time
+2. Test in safe mode (non-critical photo/video)
+3. If app crashes, disable feature immediately
+4. Document which features work on your device
+5. Share findings with community
+
 ### Development Features
 
 These modifications complement the existing modifications:
