@@ -84,6 +84,15 @@
 
     return-object p0
 
+    :pswitch_5
+    check-cast p0, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsActivity;
+
+    invoke-static {p0, p1, p2}, Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsActivity;->k(Lcom/sec/android/app/camera/setting/CameraAdvancedSettingsActivity;Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object p0
+
+    return-object p0
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_4
@@ -91,6 +100,7 @@
         :pswitch_2
         :pswitch_0
         :pswitch_1
+        :pswitch_5
     .end packed-switch
 .end method
 

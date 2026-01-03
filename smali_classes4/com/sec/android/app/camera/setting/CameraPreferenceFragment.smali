@@ -2449,6 +2449,12 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    const-string v2, "camera_advanced_settings"
+
+    sget-object v3, Lcom/sec/android/app/camera/interfaces/SaLogEventId;->INVALID:Lcom/sec/android/app/camera/interfaces/SaLogEventId;
+
+    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     const-string v2, "advanced_intelligent_options"
 
     sget-object v3, Lcom/sec/android/app/camera/interfaces/SaLogEventId;->SETTING_ADVANCED_INTELLIGENT_OPTIONS:Lcom/sec/android/app/camera/interfaces/SaLogEventId;

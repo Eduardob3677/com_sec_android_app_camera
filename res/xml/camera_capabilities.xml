@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/camera_advanced_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_action_shot_supported"
+            android:title="@string/cap_is_action_shot_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_advanced_zero_shutter_lag_supported"
+            android:title="@string/cap_is_advanced_zero_shutter_lag_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_ae_af_lock_supported"
+            android:title="@string/cap_is_ae_af_lock_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_af_supported"
+            android:title="@string/cap_is_af_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_anamorphic_lens_preview_supported"
+            android:title="@string/cap_is_anamorphic_lens_preview_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_auto_framing_supported"
+            android:title="@string/cap_is_auto_framing_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_beauty_face_supported"
+            android:title="@string/cap_is_beauty_face_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_beauty_in_hal_face_detection_supported"
+            android:title="@string/cap_is_beauty_in_hal_face_detection_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_beauty_in_hal_face_detection_tracking_supported"
+            android:title="@string/cap_is_beauty_in_hal_face_detection_tracking_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_beauty_in_hal_supported"
+            android:title="@string/cap_is_beauty_in_hal_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_bokeh_lighting_supported"
+            android:title="@string/cap_is_bokeh_lighting_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_bokeh_night_supported"
+            android:title="@string/cap_is_bokeh_night_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_bokeh_special_effect_supported"
+            android:title="@string/cap_is_bokeh_special_effect_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_bokeh_supported"
+            android:title="@string/cap_is_bokeh_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_caf_supported"
+            android:title="@string/cap_is_caf_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_color_space_mode_display_p3_supported"
+            android:title="@string/cap_is_color_space_mode_display_p3_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_composition_guide_supported"
+            android:title="@string/cap_is_composition_guide_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_depth_supported"
+            android:title="@string/cap_is_depth_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_document_detection_in_hal_supported"
+            android:title="@string/cap_is_document_detection_in_hal_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_dynamic_fov_supported"
+            android:title="@string/cap_is_dynamic_fov_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_dynamic_shot_info_supported"
+            android:title="@string/cap_is_dynamic_shot_info_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_editable_portrait_video_supported"
+            android:title="@string/cap_is_editable_portrait_video_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_event_finder_supported"
+            android:title="@string/cap_is_event_finder_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_face_detection_full_mode_supported"
+            android:title="@string/cap_is_face_detection_full_mode_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_face_detection_supported"
+            android:title="@string/cap_is_face_detection_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_focus_enhancer_supported"
+            android:title="@string/cap_is_focus_enhancer_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_front_photo_night_mode_supported"
+            android:title="@string/cap_is_front_photo_night_mode_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_fusion_high_resolution_supported"
+            android:title="@string/cap_is_fusion_high_resolution_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_hyperlapse_astrography_supported"
+            android:title="@string/cap_is_hyperlapse_astrography_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_hyperlapse_trail_mode_supported"
+            android:title="@string/cap_is_hyperlapse_trail_mode_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_lens_distortion_correction_supported"
+            android:title="@string/cap_is_lens_distortion_correction_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_live_hdr_supported"
+            android:title="@string/cap_is_live_hdr_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_log_video_supported"
+            android:title="@string/cap_is_log_video_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_multi_af_supported"
+            android:title="@string/cap_is_multi_af_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_night_screen_flash_supported"
+            android:title="@string/cap_is_night_screen_flash_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_object_detector_supported"
+            android:title="@string/cap_is_object_detector_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_pet_detection_supported"
+            android:title="@string/cap_is_pet_detection_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_phase_af_supported"
+            android:title="@string/cap_is_phase_af_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_photo_palm_gesture_detection_supported"
+            android:title="@string/cap_is_photo_palm_gesture_detection_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_qr_code_detection_in_hal_supported"
+            android:title="@string/cap_is_qr_code_detection_in_hal_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_quick_take_recording_animation_callback_supported"
+            android:title="@string/cap_is_quick_take_recording_animation_callback_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_removing_record_surface_while_ssm_frc_supported"
+            android:title="@string/cap_is_removing_record_surface_while_ssm_frc_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_scene_optimizer_supported"
+            android:title="@string/cap_is_scene_optimizer_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_selfie_tone_mode_supported"
+            android:title="@string/cap_is_selfie_tone_mode_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_sensor_crop_supported"
+            android:title="@string/cap_is_sensor_crop_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_single_bokeh_in_hal_supported"
+            android:title="@string/cap_is_single_bokeh_in_hal_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_slow_motion_resolution_supported"
+            android:title="@string/cap_is_slow_motion_resolution_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_smooth_zoom_supported"
+            android:title="@string/cap_is_smooth_zoom_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_sub_preview_callback_supported"
+            android:title="@string/cap_is_sub_preview_callback_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_super_slow_motion_gmc_supported"
+            android:title="@string/cap_is_super_slow_motion_gmc_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_super_slow_motion_qfrc_supported"
+            android:title="@string/cap_is_super_slow_motion_qfrc_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_super_slow_motion_supported"
+            android:title="@string/cap_is_super_slow_motion_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_sync_cancel_super_slow_motion_auto_detect_supported"
+            android:title="@string/cap_is_sync_cancel_super_slow_motion_auto_detect_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_touch_ae_supported"
+            android:title="@string/cap_is_touch_ae_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_touch_af_supported"
+            android:title="@string/cap_is_touch_af_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_video_beauty_face_supported"
+            android:title="@string/cap_is_video_beauty_face_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_video_beauty_snapshot_supported"
+            android:title="@string/cap_is_video_beauty_snapshot_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_video_bokeh_effect_supported"
+            android:title="@string/cap_is_video_bokeh_effect_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_video_color_space_mode_display_p3_supported"
+            android:title="@string/cap_is_video_color_space_mode_display_p3_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_video_palm_gesture_detection_supported"
+            android:title="@string/cap_is_video_palm_gesture_detection_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_video_resolution_supported"
+            android:title="@string/cap_is_video_resolution_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_zoom_lock_supported"
+            android:title="@string/cap_is_zoom_lock_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+        <com.sec.android.app.camera.setting.CameraSwitchPreference
+            android:key="cap_is_zsl_capture_supported"
+                    android:title="@string/cap_is_zsl_capture_supported"
+            android:defaultValue="false"
+            android:persistent="true" />
+</PreferenceScreen>

@@ -13080,6 +13080,7 @@
     <public type="layout" name="zoom_slider_view" id="0x7f0d0725" />
     <public type="layout" name="zoom_text_view" id="0x7f0d0726" />
     <public type="layout" name="zoom_tick_slider" id="0x7f0d0727" />
+    <public type="layout" name="camera_advanced_settings_layout" id="0x7f0d0728" />
     <public type="menu" name="attach_button_menu" id="0x7f0f0000" />
     <public type="menu" name="debug_feature_menu" id="0x7f0f0001" />
     <public type="menu" name="features_setting_menus" id="0x7f0f0002" />
@@ -16333,4 +16334,5 @@
     <public type="xml" name="watermark_bg" id="0x7f170011" />
     <public type="xml" name="watermark_type" id="0x7f170012" />
     <public type="xml" name="widget_watermark" id="0x7f170013" />
+    <public type="xml" name="camera_capabilities" id="0x7f170014" />
 </resources>
