@@ -80,7 +80,7 @@
 
 .field public static final Companion:Landroidx/glance/session/InteractiveFrameClock$Companion;
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final NANOSECONDS_PER_MILLISECOND:J = 0xf4240L
 

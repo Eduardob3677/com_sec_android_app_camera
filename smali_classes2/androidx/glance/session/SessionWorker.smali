@@ -73,7 +73,7 @@
 
 .field public static final Companion:Landroidx/glance/session/SessionWorker$Companion;
 
-.field public static final DEBUG:Z = true
+.field public static final DEBUG:Z = false
 
 .field public static final TIMEOUT_EXIT_REASON:Ljava/lang/String; = "TIMEOUT_EXIT_REASON"
 

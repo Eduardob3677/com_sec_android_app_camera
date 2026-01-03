@@ -137,7 +137,7 @@
 
 .field private static final Companion:Landroidx/glance/appwidget/AppWidgetSession$Companion;
 
-.field public static final DEBUG:Z = true
+.field public static final DEBUG:Z = false
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
