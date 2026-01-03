@@ -1751,4 +1751,9 @@
     <id name="zoom_text_layout" />
     <id name="zoom_text_view" />
     <id name="zoom_tick_slider_stub" />
+    <id name="capability_settings_header" />
+    <id name="capability_settings_description" />
+    <id name="capability_switches_container" />
+    <id name="capability_reset_all_button" />
+    <id name="capability_switch" />
 </resources>

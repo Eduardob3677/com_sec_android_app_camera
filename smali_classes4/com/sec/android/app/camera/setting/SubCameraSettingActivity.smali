@@ -184,6 +184,21 @@
     return-object p0
 
     :cond_6
+    const-string p0, "camera_settings_mods"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_7
+
+    invoke-static {p2}, Lcom/sec/android/app/camera/setting/CapabilitySettingsFragment;->newInstance(Landroid/os/Bundle;)Lcom/sec/android/app/camera/setting/CapabilitySettingsFragment;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_7
     const/4 p0, 0x0
 
     return-object p0
